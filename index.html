@@ -1,14 +1,14 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"><title>The Carlton Kants - Road to Barnbougle</title><link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'><circle cx='30' cy='30' r='28' fill='%230E1E2D'/><text x='30' y='38' text-anchor='middle' font-size='14' fill='white' font-weight='700'>CFC</text></svg>"><style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sans-serif;background:#f9fafb;color:#1a1a1a;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',sans-serif;background:#07101d;color:#eaf1fb;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 input,select,button,textarea{font-family:inherit;color:inherit}
 
 input[type="text"],input[type="number"],input[type="date"],input:not([type]),select,textarea{
   appearance:none;-webkit-appearance:none;-moz-appearance:none;
-  background-color:#fff;
-  border:1px solid #e5e7eb;
+  background-color:#0d1b30;
+  border:1px solid rgba(143,161,196,.24);
   border-radius:6px;
-  color:#1a1a1a;
+  color:#eaf1fb;
   font-size:13px;
   outline:none;
   transition:border-color .12s ease,box-shadow .12s ease;
@@ -22,9 +22,9 @@ select{
   cursor:pointer;
 }
 
-input:hover,select:hover,textarea:hover{border-color:#cbd5e0}
-input:focus,select:focus,textarea:focus{border-color:#0E1E2D;box-shadow:0 0 0 3px rgba(14,30,45,0.1)}
-input::placeholder,textarea::placeholder{color:#9ca3af}
+input:hover,select:hover,textarea:hover{border-color:rgba(143,161,196,.44)}
+input:focus,select:focus,textarea:focus{border-color:#5b83ff;box-shadow:0 0 0 3px rgba(91,131,255,0.16)}
+input::placeholder,textarea::placeholder{color:#70819f}
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
@@ -32,15 +32,113 @@ input[type="number"]{-moz-appearance:textfield}
 
 button{
   font-family:inherit;font-size:13px;cursor:pointer;
-  border:1px solid #e5e7eb;background:#fff;color:#1a1a1a;
+  border:1px solid rgba(143,161,196,.24);background:#0d1b30;color:#eaf1fb;
   border-radius:6px;padding:7px 14px;
   transition:background .12s ease,border-color .12s ease,transform .08s ease;
 }
-button:hover:not(:disabled){background:#f9fafb;border-color:#cbd5e0}
+button:hover:not(:disabled){background:#142740;border-color:rgba(143,161,196,.44)}
 button:active:not(:disabled){transform:translateY(0.5px)}
 button:disabled{opacity:.5;cursor:not-allowed}
 
 textarea{resize:vertical;line-height:1.5}
+
+.tracker-app{
+  max-width:720px;
+  margin:0 auto;
+  padding:.5rem;
+  color:#eaf1fb;
+}
+.tracker-app::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(91,131,255,.14), transparent 34%),
+    linear-gradient(115deg, rgba(255,255,255,.04) 0 18%, transparent 18% 100%),
+    #07101d;
+}
+.tracker-card{
+  border:1px solid rgba(143,161,196,.22);
+  background:linear-gradient(145deg,rgba(18,33,56,.96),rgba(11,22,39,.96));
+  border-radius:12px;
+  box-shadow:0 18px 45px rgba(0,0,0,.24);
+}
+.tracker-soft{
+  border:1px solid rgba(143,161,196,.18);
+  background:rgba(17,32,54,.72);
+  border-radius:10px;
+}
+.tracker-kicker{
+  color:#6f95ff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2.4px;
+  text-transform:uppercase;
+}
+.tracker-muted{color:#9fb1d1}
+.tracker-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  min-height:22px;
+  padding:4px 8px;
+  border:1px solid rgba(143,161,196,.24);
+  border-radius:999px;
+  background:rgba(255,255,255,.055);
+  color:#c7d3e6;
+  font-size:10px;
+  font-weight:650;
+  line-height:1;
+}
+.tracker-chip.gold{border-color:rgba(210,169,46,.36);background:rgba(210,169,46,.12);color:#e2c86c}
+.tracker-chip.red{border-color:rgba(157,72,80,.36);background:rgba(157,72,80,.14);color:#eca1a7}
+.tracker-chip.green{border-color:rgba(78,164,124,.36);background:rgba(78,164,124,.13);color:#8fd6b0}
+.hero-card{
+  background:linear-gradient(155deg,#12213b,#0b1627 72%);
+  border:1px solid rgba(143,161,196,.22);
+  border-radius:14px;
+  margin-bottom:10px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.26);
+}
+.hero-card img{opacity:.78;filter:saturate(.9) contrast(1.08)}
+.tab-bar{
+  display:flex;
+  gap:6px;
+  margin-bottom:1rem;
+  padding:5px;
+  border:1px solid rgba(143,161,196,.2);
+  border-radius:12px;
+  background:rgba(9,19,34,.68);
+}
+.tab-button{
+  flex:1;
+  padding:8px 0!important;
+  font-size:12px!important;
+  border:0!important;
+  border-radius:8px!important;
+  background:transparent!important;
+  color:#8fa1c4!important;
+}
+.tab-button.active{
+  background:#12213b!important;
+  color:#fff!important;
+  box-shadow:inset 0 0 0 1px rgba(143,161,196,.18);
+}
+.section-heading{
+  color:#dce7f7;
+  font-size:14px;
+  font-weight:750;
+  letter-spacing:.7px;
+}
+.subtle-rule{border-color:rgba(143,161,196,.18)!important}
+.dark-input-panel{
+  border:1px solid rgba(143,161,196,.18);
+  background:rgba(13,27,48,.64);
+  border-radius:10px;
+}
 
 .up-next-card{
   border-radius:12px;
@@ -201,7 +299,7 @@ textarea{resize:vertical;line-height:1.5}
 </style></head><body><div id="root"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script><script type="text/babel">const{useState,useEffect,useCallback,useRef}=React;
 const SB_URL='https://mfxrtyqroygirzcshlzo.supabase.co';const SB_KEY='sb_publishable_1RS-3T-RnSIBFvxKUtHOIg_SYYczMud';
 
-const COL = { navy: "#0E1E2D", nl: "#1a3350", nm: "#142740", w: "#fff", sil: "#a0aab4", gold: "#D4AF37", red: "#8B1A1A", grn: "#1D9E75" };
+const COL = { navy: "#12213b", nl: "#172b4a", nm: "#0d1b30", w: "#f4f7fb", sil: "#9fb1d1", gold: "#D2A92E", red: "#9D4850", grn: "#4EA47C" };
 const PLAYERS = ["Fishy", "Sea", "Brother Conor", "Niall"];
 const PTS = { 1: 6, 2: 4, 3: 2, 4: 1 };
 const MAX_PHOTOS = 12;
@@ -501,6 +599,7 @@ function UiIcon({ name, size, color }) {
     users: <><path {...common} d="M16 21v-2a4 4 0 0 0-8 0v2" /><circle {...common} cx="12" cy="7" r="4" /><path {...common} d="M22 21v-2a4 4 0 0 0-3-3.8M16 3.4a4 4 0 0 1 0 7.2" /></>,
     trophy: <><path {...common} d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z" /><path {...common} d="M7 6H4a3 3 0 0 0 3 3M17 6h3a3 3 0 0 1-3 3" /></>,
     target: <><circle {...common} cx="12" cy="12" r="9" /><circle {...common} cx="12" cy="12" r="5" /><circle fill={c} cx="12" cy="12" r="1.5" /></>,
+    lock: <><rect {...common} x="5" y="10" width="14" height="11" rx="2" /><path {...common} d="M8 10V7a4 4 0 0 1 8 0v3" /></>,
   };
   return <svg width={s} height={s} viewBox="0 0 24 24" aria-hidden="true" style={{ flexShrink: 0 }}>{icons[name] || icons.flag}</svg>;
 }
@@ -517,7 +616,7 @@ function Avatar({ name, size }) {
 
 function DiffDots({ level }) {
   const colors = ["", COL.grn, COL.grn, COL.gold, COL.red, COL.red];
-  return <span style={{ display: "inline-flex", gap: 2, verticalAlign: "middle" }}>{[1, 2, 3, 4, 5].map(i => <span key={i} style={{ display: "inline-block", width: 5, height: 5, borderRadius: "50%", background: i <= level ? colors[level] : "#e5e7eb" }} />)}</span>;
+  return <span style={{ display: "inline-flex", gap: 2, verticalAlign: "middle" }}>{[1, 2, 3, 4, 5].map(i => <span key={i} style={{ display: "inline-block", width: 5, height: 5, borderRadius: "50%", background: i <= level ? colors[level] : "rgba(143,161,196,.28)" }} />)}</span>;
 }
 
 function TimeTag({ mins }) {
@@ -532,7 +631,7 @@ function renderRichText(text) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((p, i) =>
     p.startsWith("**") && p.endsWith("**")
-      ? React.createElement("strong", { key: i, style: { fontWeight: 700, color: "#0a0a0a" } }, p.slice(2, -2))
+      ? React.createElement("strong", { key: i, style: { fontWeight: 700, color: "#f4f7fb" } }, p.slice(2, -2))
       : p
   );
 }
@@ -875,18 +974,18 @@ function App() {
   const leaguePot = roundCount * 40;
   const finaleFundPot = roundCount * 100;
 
-  if (!loaded) return <div style={{ padding: "2rem", textAlign: "center", color: "#6b7280" }}>Loading...</div>;
+  if (!loaded) return <div style={{ padding: "2rem", textAlign: "center", color: "#9fb1d1" }}>Loading...</div>;
 
-  const cardStyle = { padding: "10px 12px", borderRadius: 8, border: "0.5px solid #e5e7eb", marginBottom: 6 };
+  const cardStyle = { padding: "10px 12px", borderRadius: 10, border: "1px solid rgba(143,161,196,.18)", background: "rgba(17,32,54,.72)", marginBottom: 6, color: COL.w };
 
   return (
-    <div style={{ fontFamily: "-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif", maxWidth: 720, margin: "0 auto", padding: "0.5rem" }}>
+    <div className="tracker-app" style={{ fontFamily: "-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" }}>
       {/* HEADER */}
-      <div style={{ background: COL.navy, borderRadius: 12, marginBottom: 8, overflow: "hidden" }}>
+      <div className="hero-card">
         {COVER_IMG && <img src={COVER_IMG} alt="" style={{ width: "100%", display: "block" }} />}
         <div style={{ padding: "18px 14px 20px", textAlign: "center" }}>
         <Crest size={40} />
-        <h1 style={{ fontSize: 30, fontWeight: 500, margin: "10px 0 4px", color: COL.w, fontFamily: "Georgia,serif", letterSpacing: 0.5 }}>The Carlton Kants</h1>
+        <h1 style={{ fontSize: 30, fontWeight: 650, margin: "10px 0 4px", color: COL.w, letterSpacing: 0 }}>The Carlton Kants</h1>
         <div style={{ fontSize: 15, color: COL.gold, fontStyle: "italic" }}>Road to Barnbougle</div>
         <div style={{ fontSize: 12, color: COL.sil, marginTop: 2 }}>Season 1 - Net Stableford - 12 Rounds</div>
         <div style={{ fontSize: 9, color: COL.gold, marginTop: 12, textTransform: "uppercase", letterSpacing: 1.5, opacity: 0.85 }}>Tap a player for their profile</div>
@@ -974,18 +1073,18 @@ function App() {
         const handicap = (data.handicaps || {})[p] || "-";
 
         const sectionTitle = (txt, count) => (
-          <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginTop: 18, marginBottom: 8, paddingBottom: 6, borderBottom: `2px solid ${COL.navy}15` }}>
-            <span style={{ fontSize: 13, fontWeight: 700, color: COL.navy, textTransform: "uppercase", letterSpacing: 1 }}>{txt}</span>
-            {count !== undefined && <span style={{ fontSize: 10, color: "#6b7280" }}>({count})</span>}
+          <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginTop: 18, marginBottom: 8, paddingBottom: 6, borderBottom: "1px solid rgba(143,161,196,.18)" }}>
+            <span className="tracker-kicker" style={{ letterSpacing: 1 }}>{txt}</span>
+            {count !== undefined && <span style={{ fontSize: 10, color: COL.sil }}>({count})</span>}
           </div>
         );
 
         return <div>
-          <button onClick={() => setProfileFor(null)} style={{ fontSize: 12, padding: "6px 12px", marginBottom: 10, background: "transparent", color: COL.navy, border: `1px solid ${COL.navy}30`, borderRadius: 6, cursor: "pointer", fontWeight: 500 }}>← Back to dashboard</button>
+          <button onClick={() => setProfileFor(null)} style={{ fontSize: 12, padding: "6px 12px", marginBottom: 10, background: "transparent", color: COL.sil, border: "1px solid rgba(143,161,196,.22)", borderRadius: 6, cursor: "pointer", fontWeight: 500 }}>← Back to dashboard</button>
 
           {/* Profile header */}
-          <div style={{ background: `linear-gradient(135deg, ${COL.navy}, ${COL.nl})`, borderRadius: 12, padding: "20px 18px", color: COL.w, marginBottom: 14, display: "flex", alignItems: "center", gap: 14, position: "relative", overflow: "hidden" }}>
-            <div style={{ position: "absolute", top: 10, left: 18, fontSize: 9, fontWeight: 700, color: COL.gold, textTransform: "uppercase", letterSpacing: 2 }}>👤 Player Profile</div>
+          <div className="tracker-card" style={{ padding: "20px 18px", color: COL.w, marginBottom: 14, display: "flex", alignItems: "center", gap: 14, position: "relative", overflow: "hidden" }}>
+            <div style={{ position: "absolute", top: 10, left: 18, display: "flex", alignItems: "center", gap: 5, fontSize: 9, fontWeight: 700, color: COL.gold, textTransform: "uppercase", letterSpacing: 2 }}><UiIcon name="user" size={11} /> Player Profile</div>
             <Avatar name={p} size={68} />
             <div style={{ flex: 1, marginTop: 8 }}>
               <div style={{ fontSize: 22, fontWeight: 700, lineHeight: 1.1 }}>{p}</div>
@@ -1004,11 +1103,11 @@ function App() {
               { l: "LOLLIES", v: ps.lollies || 0, c: COL.gold },
               { l: "Mares", v: ps.mares || 0, c: COL.red },
               { l: "CTP", v: ps.ctp || 0, c: COL.grn },
-              { l: "Best SF", v: ps.best || "-", c: COL.navy },
+              { l: "Best SF", v: ps.best || "-", c: "#6f95ff" },
             ].map(stat => (
-              <div key={stat.l} style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 8, padding: "8px 4px", textAlign: "center" }}>
+              <div key={stat.l} className="tracker-soft" style={{ padding: "8px 4px", textAlign: "center" }}>
                 <div style={{ fontSize: 18, fontWeight: 700, color: stat.c }}>{stat.v}</div>
-                <div style={{ fontSize: 9, color: "#6b7280", textTransform: "uppercase", letterSpacing: 0.5 }}>{stat.l}</div>
+                <div style={{ fontSize: 9, color: COL.sil, textTransform: "uppercase", letterSpacing: 0.5 }}>{stat.l}</div>
               </div>
             ))}
           </div>
@@ -1016,7 +1115,7 @@ function App() {
           {/* Round history */}
           {sectionTitle("Round history", playerRounds.length)}
           {playerRounds.length === 0 ? (
-            <div style={{ fontSize: 12, color: "#9ca3af", padding: "12px 0" }}>No rounds played yet.</div>
+            <div style={{ fontSize: 12, color: COL.sil, padding: "12px 0" }}>No rounds played yet.</div>
           ) : playerRounds.map((r) => {
             const pos = r.placements ? r.placements[p] : null;
             const sf = (r.scores || {})[p];
@@ -1024,18 +1123,18 @@ function App() {
             const onTeamB = r.isTeam && r.teams && (r.teams.B || []).includes(p);
             const won = r.isTeam && ((r.winningTeam === "A" && onTeamA) || (r.winningTeam === "B" && onTeamB));
             const winnerOnly = !r.isTeam && r.winner && !(r.placements && r.placements[p]);
-            return <div key={r.num} style={{ borderRadius: 8, border: "0.5px solid #e5e7eb", padding: "10px 12px", marginBottom: 6, display: "flex", alignItems: "center", gap: 10 }}>
+            return <div key={r.num} className="tracker-soft" style={{ padding: "10px 12px", marginBottom: 6, display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ minWidth: 30 }}>
-                <div style={{ fontSize: 12, fontWeight: 700, color: COL.navy }}>R{r.num}</div>
-                <div style={{ fontSize: 9, color: "#6b7280" }}>{r.date}</div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: COL.gold }}>R{r.num}</div>
+                <div style={{ fontSize: 9, color: COL.sil }}>{r.date}</div>
               </div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a" }}>{r.courseName}</div>
-                <div style={{ fontSize: 10, color: "#6b7280" }}>
-                  {r.isTeam ? (won ? "🤝 Team scramble · won" : "🤝 Team scramble · lost") : winnerOnly ? (r.winner === p ? "Winner · scorecard pending" : "Played · scorecard pending") : (pos ? `${placementLabel(r.placements, p)} · ${sf || "-"} stableford` : "-")}
+                <div style={{ fontSize: 13, fontWeight: 600, color: COL.w }}>{r.courseName}</div>
+                <div style={{ fontSize: 10, color: COL.sil }}>
+                  {r.isTeam ? (won ? "Team scramble · won" : "Team scramble · lost") : winnerOnly ? (r.winner === p ? "Winner · scorecard pending" : "Played · scorecard pending") : (pos ? `${placementLabel(r.placements, p)} · ${sf || "-"} stableford` : "-")}
                 </div>
               </div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: r.isTeam ? (won ? COL.grn : COL.red) : winnerOnly && r.winner === p ? COL.gold : COL.navy }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: r.isTeam ? (won ? COL.grn : COL.red) : winnerOnly && r.winner === p ? COL.gold : "#9db6ff" }}>
                 {r.isTeam ? (won ? "+6" : "-2") : winnerOnly ? (r.winner === p ? "+6" : "+0") : `+${pointsForRound(r.placements)[p] || 0}`}
               </div>
             </div>;
@@ -1045,42 +1144,42 @@ function App() {
           {summaryExcerpts.length > 0 && <>
             {sectionTitle("Written about", summaryExcerpts.length)}
             {summaryExcerpts.map(ex => (
-              <div key={ex.round.num} style={{ borderRadius: 8, border: "0.5px solid #e5e7eb", padding: "10px 12px", marginBottom: 6, background: "#fafbfc" }}>
-                <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 4, fontWeight: 500 }}>R{ex.round.num} · {ex.round.courseName}</div>
-                <div style={{ fontSize: 12, lineHeight: 1.5, whiteSpace: "pre-wrap", color: "#1a1a1a" }}>{renderRichText(ex.section)}</div>
+              <div key={ex.round.num} className="tracker-soft" style={{ padding: "10px 12px", marginBottom: 6 }}>
+                <div style={{ fontSize: 10, color: COL.sil, marginBottom: 4, fontWeight: 500 }}>R{ex.round.num} · {ex.round.courseName}</div>
+                <div style={{ fontSize: 12, lineHeight: 1.5, whiteSpace: "pre-wrap", color: COL.w }}>{renderRichText(ex.section)}</div>
               </div>
             ))}
           </>}
 
           {/* LOLLIES wins */}
           {lolliesHist.length > 0 && <>
-            {sectionTitle("🏌️ LOLLIES wins", lolliesHist.length)}
+            {sectionTitle("LOLLIES wins", lolliesHist.length)}
             {lolliesHist.map(r => (
               <div key={r.num} style={{ borderRadius: 8, border: `1px solid ${COL.gold}40`, background: COL.gold + "08", padding: "10px 12px", marginBottom: 6 }}>
                 <div style={{ fontSize: 10, color: COL.gold, fontWeight: 600, marginBottom: 3 }}>R{r.num} · {r.courseName}</div>
-                <div style={{ fontSize: 12, color: "#1a1a1a", lineHeight: 1.4 }}>{r.lollies.desc || "(no description)"}</div>
+                <div style={{ fontSize: 12, color: COL.w, lineHeight: 1.4 }}>{r.lollies.desc || "(no description)"}</div>
               </div>
             ))}
           </>}
 
           {/* Mares */}
           {maresHist.length > 0 && <>
-            {sectionTitle("😩 Mares", maresHist.length)}
+            {sectionTitle("Mares", maresHist.length)}
             {maresHist.map(r => (
               <div key={r.num} style={{ borderRadius: 8, border: `1px solid ${COL.red}30`, background: COL.red + "06", padding: "10px 12px", marginBottom: 6 }}>
                 <div style={{ fontSize: 10, color: COL.red, fontWeight: 600, marginBottom: 3 }}>R{r.num} · {r.courseName}</div>
-                <div style={{ fontSize: 12, color: "#1a1a1a", lineHeight: 1.4 }}>{r.mare.desc || "(no description)"}</div>
+                <div style={{ fontSize: 12, color: COL.w, lineHeight: 1.4 }}>{r.mare.desc || "(no description)"}</div>
               </div>
             ))}
           </>}
 
           {/* CTP wins */}
           {ctpHist.length > 0 && <>
-            {sectionTitle("🎯 Closest to pin", ctpHist.length)}
+            {sectionTitle("Closest to pin", ctpHist.length)}
             {ctpHist.map(r => (
               <div key={r.num} style={{ borderRadius: 8, border: `1px solid ${COL.grn}40`, background: COL.grn + "08", padding: "8px 12px", marginBottom: 6, display: "flex", alignItems: "center", gap: 8 }}>
                 <span style={{ fontSize: 10, color: COL.grn, fontWeight: 600, minWidth: 30 }}>R{r.num}</span>
-                <span style={{ fontSize: 12, color: "#1a1a1a", flex: 1 }}>{r.courseName}</span>
+                <span style={{ fontSize: 12, color: COL.w, flex: 1 }}>{r.courseName}</span>
                 <span style={{ fontSize: 10, color: COL.grn, fontWeight: 600 }}>+1 pt</span>
               </div>
             ))}
@@ -1088,25 +1187,20 @@ function App() {
 
           {/* Empty state if no achievements */}
           {summaryExcerpts.length === 0 && lolliesHist.length === 0 && maresHist.length === 0 && ctpHist.length === 0 && playerRounds.length > 0 && (
-            <div style={{ marginTop: 16, padding: 16, background: "#f9fafb", borderRadius: 8, fontSize: 12, color: "#6b7280", textAlign: "center" }}>No LOLLIES, mares, CTP wins or written notes yet.</div>
+            <div className="tracker-soft" style={{ marginTop: 16, padding: 16, fontSize: 12, color: COL.sil, textAlign: "center" }}>No LOLLIES, mares, CTP wins or written notes yet.</div>
           )}
         </div>;
       })()}
 
       {/* TABS - hidden when in profile view */}
-      {!profileFor && <div style={{ display: "flex", marginBottom: "1rem", borderBottom: `2px solid ${COL.navy}` }}>
+      {!profileFor && <div className="tab-bar">
         {[
           { key: "standings", label: "Standings" },
           { key: "finale", label: "Road to Barny" },
           { key: "recaps", label: "Recaps" },
           { key: "courses", label: "Courses" },
         ].map(tab => (
-          <button key={tab.key} onClick={() => { setView(tab.key); setPickFor(null); setEntering(false); }} style={{
-            flex: 1, padding: "8px 0", fontSize: 12, fontWeight: view === tab.key ? 500 : 400,
-            color: view === tab.key ? COL.w : "#6b7280",
-            background: view === tab.key ? COL.navy : "transparent", border: "none",
-            borderRadius: view === tab.key ? "6px 6px 0 0" : 0, cursor: "pointer",
-          }}>{tab.label}</button>
+          <button key={tab.key} className={`tab-button ${view === tab.key ? "active" : ""}`} onClick={() => { setView(tab.key); setPickFor(null); setEntering(false); }}>{tab.label}</button>
         ))}
       </div>}
 
@@ -1115,40 +1209,41 @@ function App() {
         {standings.map((s, i) => {
           const isLast = i === 3 && roundCount >= 1;
           const isFirst = i === 0 && s.pts > 0;
-          const muted = isFirst ? COL.sil : isLast ? COL.red : "#6b7280";
-          const primary = isFirst ? COL.w : isLast ? COL.red : "#1a1a1a";
-          const divCol = isFirst ? COL.w + "60" : isLast ? "#ff666620" : "#e5e7eb";
+          const muted = isFirst ? COL.sil : isLast ? "#d89aa0" : COL.sil;
+          const primary = isFirst ? COL.w : isLast ? "#f1b5ba" : COL.w;
+          const divCol = isFirst ? "rgba(143,161,196,.22)" : isLast ? "rgba(157,72,80,.26)" : "rgba(143,161,196,.16)";
           return (
             <div key={s.name}>
               <div style={{
                 padding: "12px", marginBottom: isLast ? 0 : 6,
-                background: isLast ? "#fdf2f2" : isFirst ? "linear-gradient(135deg, #0E1E2D, #1a2940)" : "#ffffff",
-                borderRadius: isLast ? "8px 8px 0 0" : 8,
-                border: isLast ? `1.5px solid ${COL.red}40` : isFirst ? `2px solid ${COL.gold}` : "0.5px solid #e5e7eb",
+                background: isLast ? "linear-gradient(145deg,rgba(64,27,36,.78),rgba(19,30,49,.92))" : isFirst ? "linear-gradient(145deg,#132640,#0d1b30)" : "linear-gradient(145deg,rgba(18,33,56,.9),rgba(11,22,39,.9))",
+                borderRadius: isLast ? "10px 10px 0 0" : 10,
+                border: isLast ? `1px solid ${COL.red}66` : isFirst ? `1px solid ${COL.gold}80` : "1px solid rgba(143,161,196,.18)",
+                boxShadow: isFirst ? "0 18px 40px rgba(0,0,0,.22)" : "none",
               }}>
                 {/* Top row: rank, avatar, name, points */}
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-                  <div style={{ fontSize: 22, fontWeight: 500, width: 24, textAlign: "center", color: isFirst ? "#FFD700" : isLast ? COL.red : "#6b7280" }}>{i + 1}</div>
+                  <div style={{ fontSize: 22, fontWeight: 700, width: 24, textAlign: "center", color: isFirst ? COL.gold : isLast ? "#f1b5ba" : COL.sil }}>{i + 1}</div>
                   <Avatar name={s.name} size={44} />
                   <div style={{ flex: 1 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
                       <span style={{ fontSize: 16, fontWeight: 500, color: primary }}>{s.name}</span>
                       {s.trend === 1 && <span style={{ color: COL.grn, fontSize: 12 }}>&#9650;</span>}
-                      {s.trend === -1 && <span style={{ color: "#ff4444", fontSize: 12 }}>&#9660;</span>}
-                      {s.isPB && <span style={{ fontSize: 8, padding: "2px 6px", borderRadius: 6, background: COL.gold + "30", color: COL.gold, fontWeight: 500 }}>PB!</span>}
-                      {s.isStinker && <span style={{ fontSize: 8, padding: "2px 6px", borderRadius: 6, background: COL.red + "30", color: "#ff4444", fontWeight: 500 }}>Stinker</span>}
+                      {s.trend === -1 && <span style={{ color: "#d89aa0", fontSize: 12 }}>&#9660;</span>}
+                      {s.isPB && <span className="tracker-chip gold" style={{ fontSize: 8, padding: "2px 6px" }}>PB!</span>}
+                      {s.isStinker && <span className="tracker-chip red" style={{ fontSize: 8, padding: "2px 6px" }}>Stinker</span>}
                     </div>
                     {s.hc && <div style={{ fontSize: 10, color: muted }}>Handicap {s.hc}</div>}
                   </div>
                   <div style={{ textAlign: "right" }}>
-                    <div style={{ fontSize: 30, fontWeight: 500, color: isFirst ? "#FFD700" : isLast ? COL.red : "#1a1a1a", lineHeight: 1 }}>{s.pts}</div>
+                    <div style={{ fontSize: 30, fontWeight: 650, color: isFirst ? COL.gold : isLast ? "#f1b5ba" : COL.w, lineHeight: 1 }}>{s.pts}</div>
                     <div style={{ fontSize: 9, color: muted }}>pts</div>
                   </div>
                 </div>
                 {/* Stats grid */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 0, marginTop: 10, border: "1px solid " + (isFirst ? "rgba(255,255,255,0.25)" : isLast ? "rgba(139,26,26,0.2)" : "#e5e7eb"), borderRadius: 6, overflow: "hidden" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 0, marginTop: 10, border: "1px solid " + divCol, borderRadius: 8, overflow: "hidden", background: "rgba(255,255,255,.035)" }}>
                   {[{v: s.wins, l: "Wins"}, {v: s.played, l: "Played"}, {v: s.avg || "-", l: "Avg SF"}, {v: s.totalSf || "-", l: "Total SF"}].map((stat, si) => (
-                    <div key={si} style={{ textAlign: "center", padding: "8px 4px", borderRight: si < 3 ? "1px solid " + (isFirst ? "rgba(255,255,255,0.25)" : isLast ? "rgba(139,26,26,0.2)" : "#e5e7eb") : "none" }}>
+                    <div key={si} style={{ textAlign: "center", padding: "8px 4px", borderRight: si < 3 ? "1px solid " + divCol : "none" }}>
                       <div style={{ fontSize: 16, fontWeight: 500, color: primary }}>{stat.v}</div>
                       <div style={{ fontSize: 9, color: muted }}>{stat.l}</div>
                     </div>
@@ -1156,14 +1251,14 @@ function App() {
                 </div>
                 {/* Awards row */}
                 {(s.lollies > 0 || s.mares > 0 || s.ctp > 0 || s.best > 0) && <div style={{ textAlign: "center", marginTop: 8, paddingBottom: 4 }}>
-                    {s.lollies > 0 && <span style={{ fontSize: 9, padding: "3px 10px", borderRadius: 10, background: COL.gold + "25", color: COL.gold, fontWeight: 500, display: "inline-block", margin: "0 3px", border: "1px solid " + COL.gold + "30" }}>{s.lollies} LOLLIES</span>}
-                    {s.mares > 0 && <span style={{ fontSize: 9, padding: "3px 10px", borderRadius: 10, background: COL.red + "25", color: "#ff4444", fontWeight: 500, display: "inline-block", margin: "0 3px", border: "1px solid " + COL.red + "30" }}>{s.mares} {s.mares === 1 ? "Mare" : "Mares"}</span>}
-                    {s.ctp > 0 && <span style={{ fontSize: 9, padding: "3px 10px", borderRadius: 10, background: COL.grn + "25", color: COL.grn, fontWeight: 500, display: "inline-block", margin: "0 3px", border: "1px solid " + COL.grn + "30" }}>{s.ctp} CTP</span>}
-                    {s.best > 0 && <span style={{ fontSize: 9, padding: "3px 10px", borderRadius: 10, background: isFirst ? "rgba(255,255,255,0.1)" : COL.grn + "10", color: isFirst ? COL.grn : COL.grn, fontWeight: 500, display: "inline-block", margin: "0 3px", border: "1px solid " + COL.grn + "30" }}>Best {s.best}</span>}
+                    {s.lollies > 0 && <span className="tracker-chip gold" style={{ margin: "0 3px" }}>{s.lollies} LOLLIES</span>}
+                    {s.mares > 0 && <span className="tracker-chip red" style={{ margin: "0 3px" }}>{s.mares} {s.mares === 1 ? "Mare" : "Mares"}</span>}
+                    {s.ctp > 0 && <span className="tracker-chip green" style={{ margin: "0 3px" }}>{s.ctp} CTP</span>}
+                    {s.best > 0 && <span className="tracker-chip green" style={{ margin: "0 3px" }}>Best {s.best}</span>}
                 </div>}
               </div>
-              {isLast && data.forfeit && <div style={{ background: COL.red, borderRadius: "0 0 8px 8px", padding: "6px 10px", marginBottom: 8, textAlign: "center" }}>
-                <div style={{ fontSize: 8, color: "#ff9999", letterSpacing: 1, fontWeight: 500 }}>FORFEIT ZONE</div>
+              {isLast && data.forfeit && <div style={{ background: "rgba(157,72,80,.22)", border: `1px solid ${COL.red}55`, borderTop: 0, borderRadius: "0 0 10px 10px", padding: "6px 10px", marginBottom: 8, textAlign: "center" }}>
+                <div style={{ fontSize: 8, color: "#eca1a7", letterSpacing: 1, fontWeight: 700 }}>FORFEIT ZONE</div>
                 <div style={{ fontSize: 11, color: COL.w }}>{data.forfeit}</div>
               </div>}
             </div>
@@ -1172,11 +1267,11 @@ function App() {
 
       {/* FORFEIT BANNER */}
       {pickedCount > 0 ? (
-        <div style={{ background: COL.red, borderRadius: "0 0 12px 12px", marginBottom: 8, overflow: "hidden" }}>
+        <div className="tracker-card" style={{ borderColor: `${COL.red}55`, marginBottom: 10, overflow: "hidden" }}>
           <div style={{ padding: "12px 14px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap" }}>
-              <span style={{ fontSize: 14, color: "#ff9999", fontWeight: 600, textTransform: "uppercase", letterSpacing: 1.5 }}>{forfeitReady ? "Forfeit locked" : "Forfeit building"}</span>
-              <span style={{ fontSize: 11, color: "#ffcccc", fontWeight: 500 }}>{pickedCount}/{FORFEIT_CATS.length} pieces · winner of each round picks</span>
+              <span style={{ fontSize: 14, color: "#eca1a7", fontWeight: 750, textTransform: "uppercase", letterSpacing: 1.5 }}>{forfeitReady ? "Forfeit locked" : "Forfeit building"}</span>
+              <span style={{ fontSize: 11, color: COL.sil, fontWeight: 500 }}>{pickedCount}/{FORFEIT_CATS.length} pieces · winner of each round picks</span>
             </div>
             {roundCount >= 1 && <div style={{ display: "flex", alignItems: "center", gap: 6 }}><Avatar name={lastPlace.name} size={22} /><span style={{ fontSize: 10, color: COL.w, fontWeight: 500 }}>{shortName(lastPlace.name)}</span></div>}
           </div>
@@ -1185,12 +1280,12 @@ function App() {
               const pickers = forfeitPickers(sec.pickIdx);
               return (
               <div key={sec.key} style={{ padding: "7px 14px", borderTop: "1px solid #ffffff15", display: "flex", alignItems: "flex-start", gap: 8 }}>
-                <span style={{ fontSize: 10, background: "#ffffff15", color: "#ffdada", padding: "2px 6px", borderRadius: 4, fontWeight: 600, minWidth: 38, textAlign: "center", flexShrink: 0 }}>#{sec.pickIdx}</span>
+                <span style={{ fontSize: 10, background: "rgba(157,72,80,.2)", color: "#eca1a7", padding: "2px 6px", borderRadius: 4, fontWeight: 700, minWidth: 38, textAlign: "center", flexShrink: 0 }}>#{sec.pickIdx}</span>
                 <span style={{ fontSize: 14, lineHeight: 1.2, flexShrink: 0 }}>{sec.icon}</span>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 9, color: "#ffcccc", textTransform: "uppercase", letterSpacing: 0.5 }}>{sec.label}</div>
+                  <div style={{ fontSize: 9, color: "#eca1a7", textTransform: "uppercase", letterSpacing: 0.5 }}>{sec.label}</div>
                   <div style={{ fontSize: 12, fontWeight: 500, lineHeight: 1.35 }}>{sec.picks.join(" + ")}</div>
-                  {pickers.length > 0 && <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 4, fontSize: 9, color: "#ffcccc" }}>
+                  {pickers.length > 0 && <div style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 4, fontSize: 9, color: COL.sil }}>
                     <span>picked by</span>
                     {pickers.map(p => <span key={p} style={{ display: "inline-flex", alignItems: "center", gap: 3 }}>
                       <Avatar name={p} size={14} />
@@ -1203,10 +1298,10 @@ function App() {
             })}
           </div>
           <div style={{ padding: "10px 14px", borderTop: "1px solid #ffffff15" }}>
-            <div style={{ background: "#ffffff20", borderRadius: 3, height: 6, overflow: "hidden" }}>
-              <div style={{ height: "100%", width: `${Math.round((pickedCount / FORFEIT_CATS.length) * 100)}%`, background: "#ff6666", borderRadius: 3, transition: "width 0.5s" }} />
+            <div style={{ background: "rgba(255,255,255,.1)", borderRadius: 3, height: 6, overflow: "hidden" }}>
+              <div style={{ height: "100%", width: `${Math.round((pickedCount / FORFEIT_CATS.length) * 100)}%`, background: COL.red, borderRadius: 3, transition: "width 0.5s" }} />
             </div>
-            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#ff9999", marginTop: 4 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#eca1a7", marginTop: 4 }}>
               <span>{pickedCount} of {FORFEIT_CATS.length} pieces picked</span>
               <span>{forfeitReady ? "LOCKED IN" : nextForfeitCat && nextForfeitCat.pickIdx <= visibleCount ? `Pending: ${(forfeitPickers(nextForfeitCat.pickIdx)[0] && shortName(forfeitPickers(nextForfeitCat.pickIdx)[0])) || "winner"} to pick ${nextForfeitCat.label}` : nextForfeitCat ? `Pick ${nextForfeitCat.pickIdx} unlocks after R${nextForfeitCat.pickIdx} is entered` : ""}</span>
             </div>
@@ -1214,48 +1309,48 @@ function App() {
         </div>
       ) : (
         <div style={{ ...cardStyle, textAlign: "center", padding: 16 }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: "#1a1a1a", marginBottom: 2 }}>Forfeit builder · 12 pieces</div>
-          <div style={{ fontSize: 11, color: "#6b7280", marginBottom: 10 }}>The winner of each round picks the forfeit piece for that round. {visibleCount > 0 && forfeitPickers(1).length > 0 ? <><strong>{shortName(forfeitPickers(1)[0])}</strong> to pick Pick 1.</> : "First pick unlocks once Round 1 is entered."}</div>
+          <div style={{ fontSize: 12, fontWeight: 700, color: COL.w, marginBottom: 2 }}>Forfeit builder · 12 pieces</div>
+          <div style={{ fontSize: 11, color: COL.sil, marginBottom: 10 }}>The winner of each round picks the forfeit piece for that round. {visibleCount > 0 && forfeitPickers(1).length > 0 ? <><strong>{shortName(forfeitPickers(1)[0])}</strong> to pick Pick 1.</> : "First pick unlocks once Round 1 is entered."}</div>
           <button onClick={() => setShowBuilder(true)} style={{ fontSize: 13, padding: "9px 22px", cursor: "pointer", background: COL.red, color: COL.w, border: "none", borderRadius: 8, fontWeight: 600 }}>Start building</button>
         </div>
       )}
 
 
         {/* Handicaps */}
-        <div style={{ borderRadius: 8, border: "1px solid #e5e7eb", overflow: "hidden", marginTop: 8, marginBottom: 8 }}>
-          <div style={{ background: "#f3f4f6", padding: "8px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #e5e7eb" }}>
-            <span style={{ fontSize: 13, fontWeight: 500 }}>Handicaps</span>
-            <span style={{ fontSize: 9, color: "#6b7280" }}>Agree before R1, review after R3</span>
+        <div className="tracker-card" style={{ overflow: "hidden", marginTop: 8, marginBottom: 8 }}>
+          <div style={{ background: "rgba(255,255,255,.04)", padding: "8px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid rgba(143,161,196,.18)" }}>
+            <span style={{ fontSize: 13, fontWeight: 700, color: COL.w }}>Handicaps</span>
+            <span style={{ fontSize: 9, color: COL.sil }}>Agree before R1, review after R3</span>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}>
-            {PLAYERS.map((p, i) => <div key={p} style={{ padding: "10px 0", textAlign: "center", borderRight: i < 3 ? "1px solid #e5e7eb" : "none" }}>
+            {PLAYERS.map((p, i) => <div key={p} style={{ padding: "10px 0", textAlign: "center", borderRight: i < 3 ? "1px solid rgba(143,161,196,.18)" : "none" }}>
               <div><Avatar name={p} size={28} /></div>
               <div style={{ fontSize: 13, fontWeight: 500, marginTop: 4 }}>{shortName(p)}</div>
-              <div style={{ borderTop: "1px solid #e5e7eb", marginTop: 6, padding: "6px 0 2px" }}>
+              <div style={{ borderTop: "1px solid rgba(143,161,196,.18)", marginTop: 6, padding: "6px 0 2px" }}>
                 <div onClick={() => { const v = prompt(shortName(p) + " handicap:", (data.handicaps || {})[p] || ""); if (v !== null) save({ ...data, handicaps: { ...(data.handicaps || {}), [p]: v } }); }} style={{ fontSize: 18, fontWeight: 500, cursor: "pointer", lineHeight: 1.4 }}>{(data.handicaps || {})[p] || "-"}</div>
               </div>
             </div>)}
           </div>
         </div>
 
-        {pickedCount > 0 && <button onClick={() => setShowBuilder(true)} style={{ fontSize: 10, color: "#6b7280", background: "transparent", border: "none", cursor: "pointer", textDecoration: "underline", display: "block", margin: "8px auto" }}>Edit forfeit</button>}
+        {pickedCount > 0 && <button onClick={() => setShowBuilder(true)} style={{ fontSize: 10, color: COL.sil, background: "transparent", border: "none", cursor: "pointer", textDecoration: "underline", display: "block", margin: "8px auto" }}>Edit forfeit</button>}
 
         {/* FORFEIT BUILDER */}
-        {showBuilder && <div style={{ borderRadius: 12, border: `2px solid ${COL.red}`, marginBottom: 8, overflow: "hidden" }}>
-          <div style={{ background: COL.red, padding: "12px 14px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        {showBuilder && <div className="tracker-card" style={{ borderColor: `${COL.red}66`, marginBottom: 8, overflow: "hidden" }}>
+          <div style={{ background: "rgba(157,72,80,.22)", padding: "12px 14px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${COL.red}44` }}>
             <div>
               <div style={{ fontSize: 14, fontWeight: 600, color: COL.w }}>Forfeit Builder</div>
-              <div style={{ fontSize: 11, fontWeight: 500, color: "#ffcccc", marginTop: 2 }}>Round winner picks · {pickedCount}/{FORFEIT_CATS.length} picked · {visibleCount}/{FORFEIT_CATS.length} unlocked</div>
+              <div style={{ fontSize: 11, fontWeight: 500, color: COL.sil, marginTop: 2 }}>Round winner picks · {pickedCount}/{FORFEIT_CATS.length} picked · {visibleCount}/{FORFEIT_CATS.length} unlocked</div>
             </div>
-            <button onClick={() => setShowBuilder(false)} style={{ fontSize: 11, padding: "6px 14px", cursor: "pointer", background: "#ffffff20", color: COL.w, border: "1px solid #ffffff30", borderRadius: 6, fontWeight: 500 }}>Done</button>
+            <button onClick={() => setShowBuilder(false)} style={{ fontSize: 11, padding: "6px 14px", cursor: "pointer", background: "rgba(255,255,255,.08)", color: COL.w, border: "1px solid rgba(143,161,196,.24)", borderRadius: 6, fontWeight: 500 }}>Done</button>
           </div>
           {/* Progress strip */}
-          <div style={{ display: "flex", gap: 2, padding: "8px 10px", background: "#fff1f1", borderBottom: `1px solid ${COL.red}20` }}>
+          <div style={{ display: "flex", gap: 2, padding: "8px 10px", background: "rgba(255,255,255,.035)", borderBottom: `1px solid ${COL.red}22` }}>
             {pickedCats.map(cat => {
               const done = cat.picks.length > 0;
               const unlocked = cat.pickIdx <= visibleCount;
               const current = !done && unlocked && cat.pickIdx === (pickedCount + 1);
-              return <div key={cat.key} title={`Pick ${cat.pickIdx} · ${cat.label}${unlocked ? "" : " · LOCKED"}`} style={{ flex: 1, height: 6, borderRadius: 3, background: done ? COL.red : current ? COL.gold : unlocked ? "#e5e7eb" : "#f3f4f6", opacity: unlocked ? 1 : 0.4 }} />;
+              return <div key={cat.key} title={`Pick ${cat.pickIdx} · ${cat.label}${unlocked ? "" : " · LOCKED"}`} style={{ flex: 1, height: 6, borderRadius: 3, background: done ? COL.red : current ? COL.gold : unlocked ? "rgba(143,161,196,.34)" : "rgba(143,161,196,.16)", opacity: unlocked ? 1 : 0.4 }} />;
             })}
           </div>
           {visibleCats.map(cat => {
@@ -1263,19 +1358,19 @@ function App() {
             const isDone = picked.length > 0;
             const isNext = !isDone && cat.pickIdx === (pickedCount + 1);
             const pickers = forfeitPickers(cat.pickIdx);
-            return <div key={cat.key} style={{ padding: "12px 14px", borderBottom: "0.5px solid #e5e7eb", background: isNext ? COL.gold + "10" : "#fff" }}>
+            return <div key={cat.key} style={{ padding: "12px 14px", borderBottom: "1px solid rgba(143,161,196,.14)", background: isNext ? "rgba(210,169,46,.08)" : "transparent" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                <span style={{ fontSize: 11, fontWeight: 600, background: isDone ? COL.red : isNext ? COL.gold : "#e5e7eb", color: isDone || isNext ? "#fff" : "#6b7280", padding: "3px 8px", borderRadius: 6, minWidth: 44, textAlign: "center" }}>Pick {cat.pickIdx}</span>
+                <span style={{ fontSize: 11, fontWeight: 700, background: isDone ? COL.red : isNext ? COL.gold : "rgba(143,161,196,.16)", color: isDone || isNext ? "#fff" : COL.sil, padding: "3px 8px", borderRadius: 6, minWidth: 44, textAlign: "center" }}>Pick {cat.pickIdx}</span>
                 <span style={{ fontSize: 15 }}>{cat.icon}</span>
                 <span style={{ fontSize: 13, fontWeight: 600, flex: 1 }}>{cat.label}</span>
                 {isDone && <span style={{ fontSize: 10, padding: "2px 8px", borderRadius: 8, background: COL.grn + "18", color: COL.grn, fontWeight: 600 }}>✓ {picked.length}</span>}
                 {isNext && <span style={{ fontSize: 10, padding: "2px 8px", borderRadius: 8, background: COL.gold + "25", color: COL.gold, fontWeight: 600 }}>UP NEXT</span>}
               </div>
               {pickers.length > 0 && <div style={{ display: "flex", alignItems: "center", gap: 5, marginBottom: 8, paddingLeft: 2 }}>
-                <span style={{ fontSize: 9, color: "#6b7280", fontWeight: 500 }}>{isDone ? "Picked by" : "R" + cat.pickIdx + " winner picks:"}</span>
-                {pickers.map(p => <span key={p} style={{ display: "inline-flex", alignItems: "center", gap: 3, padding: "2px 6px", background: COL.gold + "15", borderRadius: 10 }}>
+                <span style={{ fontSize: 9, color: COL.sil, fontWeight: 500 }}>{isDone ? "Picked by" : "R" + cat.pickIdx + " winner picks:"}</span>
+                {pickers.map(p => <span key={p} style={{ display: "inline-flex", alignItems: "center", gap: 3, padding: "2px 6px", background: "rgba(210,169,46,.12)", borderRadius: 10 }}>
                   <Avatar name={p} size={14} />
-                  <span style={{ fontSize: 10, fontWeight: 600, color: "#1a1a1a" }}>{shortName(p)}</span>
+                  <span style={{ fontSize: 10, fontWeight: 600, color: COL.w }}>{shortName(p)}</span>
                 </span>)}
               </div>}
               <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
@@ -1287,9 +1382,9 @@ function App() {
                     save({ ...data, forfeitPicks: { ...(data.forfeitPicks || {}), [cat.key]: arr } });
                   }} style={{
                     fontSize: 11, padding: "7px 11px", borderRadius: 6, cursor: "pointer",
-                    background: sel ? COL.red : "#fff",
-                    color: sel ? COL.w : "#1a1a1a",
-                    border: sel ? `1.5px solid ${COL.red}` : "1px solid #e5e7eb",
+                    background: sel ? "rgba(157,72,80,.35)" : "rgba(255,255,255,.055)",
+                    color: sel ? COL.w : "#dce7f7",
+                    border: sel ? `1.5px solid ${COL.red}` : "1px solid rgba(143,161,196,.2)",
                     fontWeight: sel ? 500 : 400, textAlign: "left", lineHeight: 1.3, maxWidth: "100%",
                   }}>{opt}</button>;
                 })}
@@ -1297,17 +1392,17 @@ function App() {
             </div>;
           })}
           {/* Locked preview row */}
-          {visibleCount < FORFEIT_CATS.length && <div style={{ padding: "10px 14px", background: "#f9fafb", borderBottom: "0.5px solid #e5e7eb", display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ fontSize: 14 }}>🔒</span>
-            <div style={{ fontSize: 11, color: "#6b7280", flex: 1 }}>{FORFEIT_CATS.length - visibleCount} more {FORFEIT_CATS.length - visibleCount === 1 ? "pick" : "picks"} locked. Pick {visibleCount + 1} unlocks once Round {visibleCount + 1} is entered - the winner picks.</div>
+          {visibleCount < FORFEIT_CATS.length && <div style={{ padding: "10px 14px", background: "rgba(255,255,255,.035)", borderBottom: "1px solid rgba(143,161,196,.14)", display: "flex", alignItems: "center", gap: 8 }}>
+            <UiIcon name="lock" size={14} />
+            <div style={{ fontSize: 11, color: COL.sil, flex: 1 }}>{FORFEIT_CATS.length - visibleCount} more {FORFEIT_CATS.length - visibleCount === 1 ? "pick" : "picks"} locked. Pick {visibleCount + 1} unlocks once Round {visibleCount + 1} is entered - the winner picks.</div>
           </div>}
           {/* Preview */}
-          {pickedCount > 0 && <div style={{ padding: "12px 14px", background: COL.red + "08", borderTop: `1px solid ${COL.red}20` }}>
+          {pickedCount > 0 && <div style={{ padding: "12px 14px", background: "rgba(157,72,80,.09)", borderTop: `1px solid ${COL.red}22` }}>
             <div style={{ fontSize: 11, fontWeight: 600, color: COL.red, marginBottom: 8, textTransform: "uppercase", letterSpacing: 1 }}>Preview · {pickedCount}/{FORFEIT_CATS.length}</div>
             {filledCats.map(sec => (
               <div key={sec.key} style={{ fontSize: 12, marginBottom: 4, display: "flex", gap: 6 }}>
-                <span style={{ color: "#9ca3af", fontSize: 10, minWidth: 44 }}>Pick {sec.pickIdx}</span>
-                <span style={{ color: "#6b7280", fontSize: 10, minWidth: 60 }}>{sec.label}</span>
+                <span style={{ color: COL.sil, fontSize: 10, minWidth: 44 }}>Pick {sec.pickIdx}</span>
+                <span style={{ color: COL.sil, fontSize: 10, minWidth: 60 }}>{sec.label}</span>
                 <span style={{ fontWeight: 500, flex: 1 }}>{sec.picks.join(" + ")}</span>
               </div>
             ))}
@@ -1322,17 +1417,17 @@ function App() {
           if (isTeamRound && teams) setForm({ ...baseForm, teamA: teams.A || [], teamB: teams.B || [] });
           else setForm(baseForm);
           setEntering(true); setView("recaps");
-        }} style={{ width: "100%", padding: 12, fontSize: 14, fontWeight: 500, cursor: "pointer", background: COL.navy, color: COL.w, border: "none", borderRadius: 8, marginTop: 6 }}>Enter round {roundCount + 1}{isTeamRound ? " (TEAMS)" : ""}</button>
+          }} style={{ width: "100%", padding: 12, fontSize: 14, fontWeight: 500, cursor: "pointer", background: COL.navy, color: COL.w, border: "none", borderRadius: 8, marginTop: 6 }}>Enter round {roundCount + 1}{isTeamRound ? " (TEAMS)" : ""}</button>
       </div>}
 
       {/* ===== COURSES ===== */}
       {view === "courses" && !pickFor && !profileFor && <div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
           <div>
-            <div style={{ fontSize: 15, fontWeight: 500 }}>Course picks</div>
+            <div className="section-heading">Course picks</div>
             <div style={{ display: "flex", gap: 4, marginTop: 3 }}>
-              <span style={{ fontSize: 9, padding: "2px 8px", borderRadius: 10, background: COL.navy + "10", color: COL.navy, fontWeight: 500, border: "1px solid " + COL.navy + "20" }}>{COURSE_PICK_LIMIT} picks each</span>
-              <span style={{ fontSize: 9, padding: "2px 8px", borderRadius: 10, background: COL.gold + "15", color: COL.gold, fontWeight: 500, border: "1px solid " + COL.gold + "30" }}>R11 + R12 locked for Barnbougle</span>
+              <span className="tracker-chip">{COURSE_PICK_LIMIT} picks each</span>
+              <span className="tracker-chip gold">R11 + R12 locked for Barnbougle</span>
             </div>
           </div>
           <button onClick={() => setAddingCourse(true)} style={{ fontSize: 10, padding: "3px 8px", cursor: "pointer", background: COL.navy, color: COL.w, border: "none", borderRadius: 4 }}>+ Add</button>
@@ -1349,7 +1444,8 @@ function App() {
             <button onClick={() => setAddingCourse(false)} style={{ fontSize: 10, padding: "4px 10px", cursor: "pointer" }}>Cancel</button>
           </div>
         </div>}
-        {PLAYERS.map((p, pi) => <div key={p} style={{ marginBottom: 0, paddingBottom: 10, borderBottom: pi < 3 ? "1px solid #e5e7eb" : "none", paddingTop: pi > 0 ? 10 : 0 }}>
+        <div className="tracker-card" style={{ overflow: "hidden" }}>
+        {PLAYERS.map((p, pi) => <div key={p} style={{ marginBottom: 0, padding: pi > 0 ? "12px 12px 10px" : "12px 12px 10px", borderBottom: pi < 3 ? "1px solid rgba(143,161,196,.14)" : "none" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
             <Avatar name={p} size={24} />
             <span style={{ fontSize: 12, fontWeight: 500, flex: 1 }}>{p} ({((data.picks || {})[p] || []).length}/{COURSE_PICK_LIMIT})</span>
@@ -1361,12 +1457,13 @@ function App() {
             {((data.picks || {})[p] || []).map(cid => {
               const c = allCourses.find(x => x.id === cid);
               const done = (data.rounds || []).some(r => r.courseId === cid);
-              return <div key={cid} style={{ fontSize: 10, padding: "2px 7px", borderRadius: 10, border: `1px solid ${COL.navy}`, textDecoration: done ? "line-through" : "none", opacity: done ? 0.4 : 1 }}>{c ? c.n : "?"}</div>;
+              return <div key={cid} style={{ fontSize: 10, padding: "2px 7px", borderRadius: 10, border: "1px solid rgba(143,161,196,.26)", background: "rgba(255,255,255,.04)", color: COL.sil, textDecoration: done ? "line-through" : "none", opacity: done ? 0.4 : 1 }}>{c ? c.n : "?"}</div>;
             })}
           </div>
         </div>)}
+        </div>
         {/* R11 + R12 locked */}
-        <div style={{ background: COL.navy, borderRadius: 8, padding: 12, marginTop: 10, display: "flex", gap: 8 }}>
+        <div className="tracker-card" style={{ padding: 12, marginTop: 10, display: "flex", gap: 8 }}>
           <div style={{ flex: 1, padding: "6px 8px", borderRadius: 6, background: COL.nm, textAlign: "center" }}>
             <div style={{ fontSize: 9, color: COL.sil }}>R11</div>
             <div style={{ fontSize: 12, fontWeight: 500, color: COL.w }}>Lost Farm</div>
@@ -1381,11 +1478,11 @@ function App() {
       </div>}
 
       {view === "courses" && pickFor && !profileFor && <div>
-        <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 10 }}>
+        <div className="tracker-card" style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10, padding: 12 }}>
           <Avatar name={pickFor} size={28} />
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 13, fontWeight: 500 }}>{pickFor}</div>
-            <div style={{ fontSize: 10, color: "#6b7280" }}>{((data.picks || {})[pickFor] || []).length}/{COURSE_PICK_LIMIT}</div>
+            <div style={{ fontSize: 10, color: COL.sil }}>{((data.picks || {})[pickFor] || []).length}/{COURSE_PICK_LIMIT}</div>
           </div>
           <button onClick={() => setPickFor(null)} style={{ fontSize: 11, padding: "6px 16px", cursor: "pointer", background: COL.navy, color: COL.w, border: "none", borderRadius: 6, fontWeight: 500 }}>Done</button>
         </div>
@@ -1397,7 +1494,7 @@ function App() {
           const filtered = allCourses.filter(cat.filter);
           if (!filtered.length) return null;
           return <div key={cat.label}>
-            <div style={{ fontSize: 11, fontWeight: 500, color: COL.navy, margin: "8px 0 4px", borderBottom: `1px solid ${COL.navy}18`, paddingBottom: 3 }}>{cat.label}</div>
+            <div className="tracker-kicker" style={{ margin: "14px 0 6px", paddingBottom: 4, borderBottom: "1px solid rgba(143,161,196,.16)" }}>{cat.label}</div>
             {filtered.map(c => {
               const taken = PLAYERS.find(p => p !== pickFor && ((data.picks || {})[p] || []).includes(c.id));
               const selected = ((data.picks || {})[pickFor] || []).includes(c.id);
@@ -1405,7 +1502,9 @@ function App() {
               const disabled = (taken && !selected) || done;
               return <div key={c.id} onClick={() => !disabled && toggleCourse(pickFor, c.id)} style={{
                 padding: "8px 10px", marginBottom: 3, borderRadius: 8,
-                border: selected ? `2px solid ${COL.navy}` : "0.5px solid #e5e7eb",
+                background: selected ? "rgba(91,131,255,.12)" : "rgba(17,32,54,.72)",
+                color: COL.w,
+                border: selected ? `1.5px solid #5b83ff` : "1px solid rgba(143,161,196,.18)",
                 opacity: disabled ? 0.3 : 1, cursor: disabled ? "not-allowed" : "pointer",
               }}>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -1416,11 +1515,11 @@ function App() {
                       {c.h === 9 && <span style={{ fontSize: 8, padding: "1px 5px", borderRadius: 8, background: COL.grn + "20", color: COL.grn }}>9h</span>}
                       <TimeTag mins={c.m} />
                     </div>
-                    <div style={{ fontSize: 10, color: "#6b7280", marginTop: 1 }}>{c.l} · Par {c.p} · <DiffDots level={c.d} /></div>
+                    <div style={{ fontSize: 10, color: COL.sil, marginTop: 1 }}>{c.l} · Par {c.p} · <DiffDots level={c.d} /></div>
                   </div>
                   <div style={{ fontSize: 14, fontWeight: 500 }}>${c.f}</div>
                 </div>
-                {taken && <div style={{ fontSize: 9, color: "#6b7280", marginTop: 1 }}>Taken by {taken}</div>}
+                {taken && <div style={{ fontSize: 9, color: COL.sil, marginTop: 1 }}>Taken by {taken}</div>}
               </div>;
             })}
           </div>;
@@ -1430,7 +1529,7 @@ function App() {
       {/* ===== ROUNDS LIST ===== */}
       {view === "recaps" && !entering && !profileFor && <div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-          <span style={{ fontSize: 16, fontWeight: 500 }}>Round recaps</span>
+          <span className="section-heading">Round recaps</span>
           <button onClick={() => {
             const nextRoundLock = (data.lockedRounds || {})[roundCount + 1];
             const baseForm = nextRoundLock && nextRoundLock.courseId ? { ...emptyForm, course: String(nextRoundLock.courseId) } : { ...emptyForm };
@@ -1439,14 +1538,14 @@ function App() {
             if (isTeamRound && teams) setForm({ ...baseForm, teamA: teams.A || [], teamB: teams.B || [] });
             else setForm(baseForm);
             setEntering(true);
-          }} style={{ fontSize: 12, padding: "5px 12px", cursor: "pointer", background: COL.navy, color: COL.w, border: "none", borderRadius: 6 }}>+ R{roundCount + 1}{isTeamRound ? " 🤝" : ""}</button>
+          }} style={{ fontSize: 12, padding: "5px 12px", cursor: "pointer", background: COL.navy, color: COL.w, border: "none", borderRadius: 6 }}>+ R{roundCount + 1}{isTeamRound ? " TEAMS" : ""}</button>
         </div>
-        {!(data.rounds || []).length && <div style={{ fontSize: 12, color: "#6b7280", textAlign: "center", padding: "2rem 0" }}>No rounds yet.</div>}
+        {!(data.rounds || []).length && <div style={{ fontSize: 12, color: COL.sil, textAlign: "center", padding: "2rem 0" }}>No rounds yet.</div>}
         {[...(data.rounds || [])].reverse().map((r, revI) => {
           const idx = (data.rounds || []).length - 1 - revI;
           return (
-          <div key={r.num} style={{ borderRadius: 8, border: "0.5px solid #e5e7eb", marginBottom: 8, overflow: "hidden" }}>
-            <div style={{ background: COL.navy, padding: "8px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
+          <div key={r.num} className="tracker-card" style={{ marginBottom: 10, overflow: "hidden" }}>
+            <div style={{ background: "rgba(255,255,255,.04)", padding: "8px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, borderBottom: "1px solid rgba(143,161,196,.16)" }}>
               <div><span style={{ fontSize: 11, fontWeight: 500, color: COL.gold }}>R{r.num}</span><span style={{ fontSize: 13, fontWeight: 500, color: COL.w, marginLeft: 6 }}>{r.courseName}</span></div>
               <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <span style={{ fontSize: 10, color: COL.sil }}>{r.date}</span>
@@ -1457,7 +1556,7 @@ function App() {
             {r.isTeam ? (
               <div style={{ padding: "10px 12px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-                  <span style={{ background: COL.gold + "20", color: COL.gold, padding: "3px 8px", borderRadius: 6, fontWeight: 700, fontSize: 9, letterSpacing: 1 }}>🤝 TEAM SCRAMBLE</span>
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: 5, background: COL.gold + "20", color: COL.gold, padding: "3px 8px", borderRadius: 6, fontWeight: 700, fontSize: 9, letterSpacing: 1 }}><UiIcon name="users" size={11} /> TEAM SCRAMBLE</span>
                 </div>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
                   {[
@@ -1467,8 +1566,8 @@ function App() {
                     const won = r.winningTeam === team.id;
                     return <div key={team.id} style={{
                       padding: 10, borderRadius: 8,
-                      border: won ? `2px solid ${COL.grn}` : `1px solid ${COL.red}30`,
-                      background: won ? COL.grn + "08" : COL.red + "06",
+                      border: won ? `1.5px solid ${COL.grn}` : `1px solid ${COL.red}44`,
+                      background: won ? "rgba(78,164,124,.1)" : "rgba(157,72,80,.09)",
                     }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 6 }}>
                         <div style={{ width: 18, height: 18, borderRadius: "50%", background: team.color, color: "#fff", fontSize: 10, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>{team.id}</div>
@@ -1498,14 +1597,14 @@ function App() {
                     const isLast = idx === entries.length - 1;
                     const winnerOnly = r.winner && !(r.placements && r.placements[p]);
                     return (
-                    <div key={p} style={{ padding: "8px 4px", textAlign: "center", borderRight: !isLast ? "0.5px solid #e5e7eb" : "none", background: pos === 1 ? COL.gold + "10" : "transparent" }}>
+                    <div key={p} style={{ padding: "8px 4px", textAlign: "center", borderRight: !isLast ? "1px solid rgba(143,161,196,.14)" : "none", background: pos === 1 ? "rgba(210,169,46,.08)" : "transparent" }}>
                       <Avatar name={p} size={24} />
-                      <div style={{ fontSize: 11, fontWeight: 500, marginTop: 3, color: pos === 1 ? COL.gold : "#1a1a1a" }}>{shortName(p)}</div>
-                      <div style={{ fontSize: 10, color: "#6b7280" }}>{winnerOnly ? "Winner · scorecard pending" : `${placementLabel(r.placements, p)}${(r.scores || {})[p] ? ` - ${r.scores[p]}sf` : ""}`}</div>
+                      <div style={{ fontSize: 11, fontWeight: 500, marginTop: 3, color: pos === 1 ? COL.gold : COL.w }}>{shortName(p)}</div>
+                      <div style={{ fontSize: 10, color: COL.sil }}>{winnerOnly ? "Winner · scorecard pending" : `${placementLabel(r.placements, p)}${(r.scores || {})[p] ? ` - ${r.scores[p]}sf` : ""}`}</div>
                       <div style={{ display: "flex", gap: 2, justifyContent: "center", marginTop: 3 }}>
-                        <span style={{ fontSize: 9, padding: "1px 5px", borderRadius: 8, background: COL.navy + "12", color: COL.navy, fontWeight: 500 }}>+{roundPts[p] || 0}</span>
+                        <span style={{ fontSize: 9, padding: "1px 5px", borderRadius: 8, background: "rgba(91,131,255,.14)", color: "#9db6ff", fontWeight: 500 }}>+{roundPts[p] || 0}</span>
                         {isLol && <span style={{ fontSize: 9, padding: "1px 5px", borderRadius: 8, background: COL.gold + "25", color: COL.gold, fontWeight: 500 }}>+1</span>}
-                        {isMare && <span style={{ fontSize: 9, padding: "1px 5px", borderRadius: 8, background: COL.red + "25", color: "#ff4444", fontWeight: 500 }}>-1</span>}
+                        {isMare && <span style={{ fontSize: 9, padding: "1px 5px", borderRadius: 8, background: COL.red + "25", color: "#eca1a7", fontWeight: 500 }}>-1</span>}
                       </div>
                     </div>);
                   });
@@ -1513,31 +1612,31 @@ function App() {
               </div>
             )}
             <div style={{ padding: "8px 10px" }}>
-              {r.lollies && r.lollies.winner && <div style={{ borderRadius: 8, border: `1px solid ${COL.gold}30`, marginBottom: 6, overflow: "hidden" }}>
-                <div style={{ padding: "8px 12px", background: COL.gold + "15", display: "flex", alignItems: "center", gap: 8 }}>
+              {r.lollies && r.lollies.winner && <div className="tracker-soft" style={{ borderColor: `${COL.gold}44`, marginBottom: 6, overflow: "hidden" }}>
+                <div style={{ padding: "8px 12px", background: "rgba(210,169,46,.1)", display: "flex", alignItems: "center", gap: 8 }}>
                   <span style={{ fontWeight: 500, color: COL.gold, fontSize: 13 }}>LOLLIES!</span>
-                  <span style={{ fontSize: 9, color: "#6b7280", padding: "2px 8px", background: "#f3f4f6", borderRadius: 4 }}>Shot of the day</span>
+                  <span className="tracker-chip" style={{ fontSize: 9, padding: "2px 8px" }}>Shot of the day</span>
                   <span style={{ marginLeft: "auto", fontSize: 13, fontWeight: 500, color: COL.gold }}>{shortName(r.lollies.winner)}</span>
                 </div>
-                {r.lollies.desc && <div style={{ padding: "10px 12px", borderTop: `1px solid ${COL.gold}15`, fontSize: 12, color: "#1a1a1a", lineHeight: 1.4 }}>{r.lollies.desc}</div>}
+                {r.lollies.desc && <div style={{ padding: "10px 12px", borderTop: `1px solid ${COL.gold}22`, fontSize: 12, color: COL.w, lineHeight: 1.4 }}>{r.lollies.desc}</div>}
               </div>}
-              {r.mare && r.mare.winner && <div style={{ borderRadius: 8, border: `1px solid ${COL.red}30`, marginBottom: 6, overflow: "hidden" }}>
-                <div style={{ padding: "8px 12px", background: COL.red + "12", display: "flex", alignItems: "center", gap: 8 }}>
+              {r.mare && r.mare.winner && <div className="tracker-soft" style={{ borderColor: `${COL.red}44`, marginBottom: 6, overflow: "hidden" }}>
+                <div style={{ padding: "8px 12px", background: "rgba(157,72,80,.12)", display: "flex", alignItems: "center", gap: 8 }}>
                   <span style={{ fontWeight: 500, color: COL.red, fontSize: 13 }}>Mare</span>
                   <span style={{ marginLeft: "auto", fontSize: 13, fontWeight: 500, color: COL.red }}>{shortName(r.mare.winner)}</span>
                 </div>
-                {r.mare.desc && <div style={{ padding: "10px 12px", borderTop: `1px solid ${COL.red}15`, fontSize: 12, color: "#1a1a1a", lineHeight: 1.4 }}>{r.mare.desc}</div>}
+                {r.mare.desc && <div style={{ padding: "10px 12px", borderTop: `1px solid ${COL.red}22`, fontSize: 12, color: COL.w, lineHeight: 1.4 }}>{r.mare.desc}</div>}
               </div>}
-              {r.ctp && r.ctp.winner && <div style={{ borderRadius: 8, border: `1px solid ${COL.grn}30`, marginBottom: 6, overflow: "hidden" }}>
-                <div style={{ padding: "8px 12px", background: COL.grn + "12", display: "flex", alignItems: "center", gap: 8 }}>
-                  <span style={{ fontWeight: 500, color: COL.grn, fontSize: 13 }}>🎯 CTP</span>
-                  <span style={{ fontSize: 9, color: "#6b7280", padding: "2px 8px", background: "#f3f4f6", borderRadius: 4 }}>Closest to the pin · +1 pt</span>
+              {r.ctp && r.ctp.winner && <div className="tracker-soft" style={{ borderColor: `${COL.grn}44`, marginBottom: 6, overflow: "hidden" }}>
+                <div style={{ padding: "8px 12px", background: "rgba(78,164,124,.12)", display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: 5, fontWeight: 500, color: COL.grn, fontSize: 13 }}><UiIcon name="target" size={12} /> CTP</span>
+                  <span className="tracker-chip green" style={{ fontSize: 9, padding: "2px 8px" }}>Closest to the pin · +1 pt</span>
                   <span style={{ marginLeft: "auto", fontSize: 13, fontWeight: 500, color: COL.grn }}>{shortName(r.ctp.winner)}</span>
                 </div>
               </div>}
-              {r.summary && <div style={{ borderRadius: 8, border: `1px solid ${COL.navy}20`, marginBottom: 6, overflow: "hidden", background: "#fafbfc" }}>
-                <div style={{ padding: "6px 12px", background: COL.navy + "08", fontSize: 10, color: COL.navy, fontWeight: 500, textTransform: "uppercase", letterSpacing: 1 }}>Round summary</div>
-                <div style={{ padding: "10px 12px", fontSize: 12, color: "#1a1a1a", lineHeight: 1.55, whiteSpace: "pre-wrap" }}>{renderRichText(r.summary)}</div>
+              {r.summary && <div className="tracker-soft" style={{ marginBottom: 6, overflow: "hidden" }}>
+                <div className="tracker-kicker" style={{ padding: "6px 12px", background: "rgba(255,255,255,.035)", letterSpacing: 1 }}>Round summary</div>
+                <div style={{ padding: "10px 12px", fontSize: 12, color: COL.w, lineHeight: 1.55, whiteSpace: "pre-wrap" }}>{renderRichText(r.summary)}</div>
               </div>}
             </div>
             {(r.photos || []).length > 0 && <div style={{ display: "flex", gap: 3, padding: "0 10px 8px", overflowX: "auto" }}>
@@ -1546,17 +1645,17 @@ function App() {
           </div>
           );
         })}
-        {(data.rounds || []).length === 0 && <div style={{ textAlign: "center", marginTop: 24, padding: 24, color: "#9ca3af", fontSize: 13 }}>No rounds yet. Tap "+ R{roundCount + 1}" above to log the first round.</div>}
+        {(data.rounds || []).length === 0 && <div style={{ textAlign: "center", marginTop: 24, padding: 24, color: COL.sil, fontSize: 13 }}>No rounds yet. Tap "+ R{roundCount + 1}" above to log the first round.</div>}
       </div>}
 
       {/* ===== ROUND ENTRY ===== */}
       {view === "recaps" && entering && !profileFor && <div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-          <span style={{ fontSize: 17, fontWeight: 600 }}>{editingIdx !== null ? `Editing Round ${formRoundNum}` : `Round ${roundCount + 1}`}</span>
+          <span className="section-heading">{editingIdx !== null ? `Editing Round ${formRoundNum}` : `Round ${roundCount + 1}`}</span>
           <button onClick={() => { setEntering(false); setEditingIdx(null); setForm(emptyForm); }} style={{ fontSize: 12, padding: "6px 14px" }}>Cancel</button>
         </div>
 
-        <label style={{ fontSize: 11, color: "#6b7280", display: "block", marginBottom: 6, fontWeight: 500 }}>Course</label>
+        <label className="tracker-kicker" style={{ display: "block", marginBottom: 6 }}>Course</label>
         <select value={form.course} onChange={e => setForm({ ...form, course: e.target.value })} style={{ width: "100%", padding: "10px 12px", fontSize: 13, marginBottom: 14 }}>
           <option value="">Select...</option>
           {courseOptionIds.filter(cid => !(data.rounds || []).some((r, i) => r.courseId === cid && i !== editingIdx)).map(cid => { const c = allCourses.find(x => x.id === cid); return c ? <option key={cid} value={cid}>{c.n} - ${c.f}</option> : null; })}
@@ -1564,19 +1663,19 @@ function App() {
 
         {formIsTeam ? (
           <div style={{ marginBottom: 8 }}>
-            <div style={{ fontSize: 11, color: "#6b7280", marginBottom: 8, fontWeight: 500, display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ background: COL.gold + "20", color: COL.gold, padding: "3px 8px", borderRadius: 6, fontWeight: 700, fontSize: 10 }}>🤝 TEAM SCRAMBLE</span>
-              <span style={{ color: "#9ca3af", fontWeight: 400 }}>R{formRoundNum} · 1st+4th vs 2nd+3rd</span>
+            <div style={{ fontSize: 11, color: COL.sil, marginBottom: 8, fontWeight: 500, display: "flex", alignItems: "center", gap: 8 }}>
+              <span className="tracker-chip gold">Team scramble</span>
+              <span style={{ color: COL.sil, fontWeight: 400 }}>R{formRoundNum} · 1st+4th vs 2nd+3rd</span>
             </div>
-            <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 10, lineHeight: 1.4 }}>Tap a player to swap teams. Winning team: <strong style={{ color: COL.grn }}>+6 each</strong>. Losing team: <strong style={{ color: COL.red }}>-2 each</strong>.</div>
+            <div style={{ fontSize: 10, color: COL.sil, marginBottom: 10, lineHeight: 1.4 }}>Tap a player to swap teams. Winning team: <strong style={{ color: COL.grn }}>+6 each</strong>. Losing team: <strong style={{ color: COL.red }}>-2 each</strong>.</div>
             {[
               { id: "A", players: form.teamA, color: "#3b82f6" },
               { id: "B", players: form.teamB, color: "#a855f7" },
             ].map(team => (
               <div key={team.id} onClick={() => setForm({ ...form, winningTeam: team.id })} style={{
                 marginBottom: 8, padding: 12, borderRadius: 10, cursor: "pointer",
-                border: form.winningTeam === team.id ? `2px solid ${COL.grn}` : "1px solid #e5e7eb",
-                background: form.winningTeam === team.id ? COL.grn + "08" : "#fff",
+                border: form.winningTeam === team.id ? `1.5px solid ${COL.grn}` : "1px solid rgba(143,161,196,.2)",
+                background: form.winningTeam === team.id ? "rgba(78,164,124,.1)" : "rgba(17,32,54,.72)",
               }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                   <div style={{ width: 22, height: 22, borderRadius: "50%", background: team.color, color: "#fff", fontSize: 11, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" }}>{team.id}</div>
@@ -1595,7 +1694,7 @@ function App() {
                         [myKey]: form[myKey].filter(x => x !== p),
                         [otherKey]: [...form[otherKey], p],
                       });
-                    }} style={{ display: "flex", alignItems: "center", gap: 6, padding: "6px 10px", background: team.color + "12", border: `1px solid ${team.color}40`, borderRadius: 16, fontSize: 12, fontWeight: 500, cursor: "pointer" }}>
+                    }} style={{ display: "flex", alignItems: "center", gap: 6, padding: "6px 10px", background: "rgba(255,255,255,.055)", border: "1px solid rgba(143,161,196,.2)", borderRadius: 16, fontSize: 12, fontWeight: 500, cursor: "pointer" }}>
                       <Avatar name={p} size={20} />
                       <span>{shortName(p)}</span>
                     </div>
@@ -1603,11 +1702,11 @@ function App() {
                 </div>
               </div>
             ))}
-            <button onClick={() => suggestedTeams && setForm({ ...form, teamA: suggestedTeams.A, teamB: suggestedTeams.B })} style={{ fontSize: 10, padding: "5px 12px", background: "transparent", color: "#6b7280", border: "1px solid #e5e7eb", borderRadius: 6, cursor: "pointer", textDecoration: "none", marginTop: 2 }}>↻ Reset to suggested pairing</button>
+            <button onClick={() => suggestedTeams && setForm({ ...form, teamA: suggestedTeams.A, teamB: suggestedTeams.B })} style={{ fontSize: 10, padding: "5px 12px", background: "transparent", color: COL.sil, border: "1px solid rgba(143,161,196,.22)", borderRadius: 6, cursor: "pointer", textDecoration: "none", marginTop: 2 }}>↻ Reset to suggested pairing</button>
           </div>
         ) : (<>
-          <label style={{ fontSize: 11, color: "#6b7280", display: "block", marginBottom: 4, fontWeight: 500 }}>Stableford <span style={{ color: "#9ca3af", fontWeight: 400 }}>(net points from 18Birdies)</span></label>
-          <div style={{ fontSize: 9, color: "#9ca3af", marginBottom: 8 }}>Position auto-calculated from SF. Equal SF = tied position, both get full points.</div>
+          <label className="tracker-kicker" style={{ display: "block", marginBottom: 4 }}>Stableford <span style={{ color: COL.sil, fontWeight: 400, letterSpacing: 0, textTransform: "none" }}>(net points from 18Birdies)</span></label>
+          <div style={{ fontSize: 9, color: COL.sil, marginBottom: 8 }}>Position auto-calculated from SF. Equal SF = tied position, both get full points.</div>
           {(() => {
             const livePlacements = derivePlacements(form.scores || {});
             return PLAYERS.map(player => {
@@ -1616,7 +1715,7 @@ function App() {
               const tied = pos && Object.values(livePlacements).filter(v => v === pos).length > 1;
               const playerPts = pos ? PTS[pos] || 0 : 0;
               return <div key={player} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                <div style={{ width: 100, fontSize: 12, fontWeight: 500, color: "#1a1a1a", display: "flex", alignItems: "center", gap: 6 }}>
+                <div style={{ width: 100, fontSize: 12, fontWeight: 500, color: COL.w, display: "flex", alignItems: "center", gap: 6 }}>
                   <Avatar name={player} size={22} />
                   <span>{shortName(player)}</span>
                 </div>
@@ -1624,10 +1723,10 @@ function App() {
                   setForm({ ...form, scores: { ...form.scores, [player]: parseInt(e.target.value) || 0 } })
                 } style={{ flex: 1, padding: "9px 10px", fontSize: 13, textAlign: "center" }} />
                 <div style={{ width: 60, textAlign: "center" }}>
-                  <div style={{ fontSize: 11, fontWeight: 600, color: pos === 1 ? COL.gold : pos === 4 ? "#9ca3af" : "#1a1a1a" }}>
+                  <div style={{ fontSize: 11, fontWeight: 600, color: pos === 1 ? COL.gold : pos === 4 ? COL.sil : COL.w }}>
                     {pos ? (tied ? "T" : "") + (pos === 1 ? "1st" : pos === 2 ? "2nd" : pos === 3 ? "3rd" : "4th") : "-"}
                   </div>
-                  <div style={{ fontSize: 10, color: tied ? COL.gold : COL.navy, fontWeight: 500 }}>{pos ? `+${playerPts}` : ""}</div>
+                  <div style={{ fontSize: 10, color: tied ? COL.gold : "#8fa1c4", fontWeight: 500 }}>{pos ? `+${playerPts}` : ""}</div>
                 </div>
               </div>;
             });
@@ -1635,30 +1734,30 @@ function App() {
         </>)}
 
         {/* Photos */}
-        <div style={{ margin: "8px 0", padding: 10, borderRadius: 8, border: `1.5px dashed ${COL.navy}30`, cursor: "pointer", background: "#f3f4f6" }} onClick={() => fileRef.current && fileRef.current.click()}>
+        <div className="tracker-soft" style={{ margin: "8px 0", padding: 10, borderStyle: "dashed", cursor: "pointer" }} onClick={() => fileRef.current && fileRef.current.click()}>
           <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} style={{ display: "none" }} />
           {!form.photos.length ? <div style={{ textAlign: "center" }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ margin: "0 auto 3px" }}><rect x="3" y="5" width="18" height="14" rx="2" stroke={COL.navy} strokeWidth="1.5" /><circle cx="8.5" cy="10.5" r="1.5" stroke={COL.navy} strokeWidth="1.5" /><path d="M3 16l5-5 4 4 3-3 6 6" stroke={COL.navy} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            <div style={{ fontSize: 10, color: "#6b7280" }}>Add scorecards + round photos (max {MAX_PHOTOS})</div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ margin: "0 auto 3px" }}><rect x="3" y="5" width="18" height="14" rx="2" stroke={COL.sil} strokeWidth="1.5" /><circle cx="8.5" cy="10.5" r="1.5" stroke={COL.sil} strokeWidth="1.5" /><path d="M3 16l5-5 4 4 3-3 6 6" stroke={COL.sil} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <div style={{ fontSize: 10, color: COL.sil }}>Add scorecards + round photos (max {MAX_PHOTOS})</div>
           </div> : <>
-            <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 6, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ fontSize: 10, color: COL.sil, marginBottom: 6, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span>{form.photos.length} of {MAX_PHOTOS} photos</span>
-              {form.photos.length < MAX_PHOTOS && <span style={{ color: COL.navy, fontWeight: 500 }}>Tap to add more</span>}
+              {form.photos.length < MAX_PHOTOS && <span style={{ color: COL.gold, fontWeight: 500 }}>Tap to add more</span>}
             </div>
             <div style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4 }}>
               {form.photos.map((ph, i) => <div key={i} style={{ position: "relative", flexShrink: 0 }}>
                 <img src={ph} style={{ height: 60, borderRadius: 4 }} alt="" />
                 <button onClick={e => { e.stopPropagation(); const arr = [...form.photos]; arr.splice(i, 1); setForm({ ...form, photos: arr }); }} style={{ position: "absolute", top: -4, right: -4, width: 16, height: 16, borderRadius: "50%", background: COL.red, color: COL.w, border: "none", fontSize: 10, cursor: "pointer", lineHeight: "16px", padding: 0 }}>×</button>
               </div>)}
-              {form.photos.length < MAX_PHOTOS && <div style={{ width: 60, height: 60, borderRadius: 4, border: `1px dashed ${COL.navy}30`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, color: "#6b7280", flexShrink: 0 }}>+</div>}
+              {form.photos.length < MAX_PHOTOS && <div style={{ width: 60, height: 60, borderRadius: 4, border: "1px dashed rgba(143,161,196,.36)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, color: COL.sil, flexShrink: 0 }}>+</div>}
             </div>
           </>}
         </div>
 
         {/* LOLLIES - single winner, 4 lads agreed post-round */}
-        <div style={{ margin: "10px 0", padding: 14, borderRadius: 10, background: COL.gold + "10", border: `1px solid ${COL.gold}25` }}>
+        <div className="tracker-soft" style={{ margin: "10px 0", padding: 14, borderColor: `${COL.gold}44`, background: "rgba(210,169,46,.08)" }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: COL.gold, marginBottom: 2 }}>LOLLIES! Shot of the day</div>
-          <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 8 }}>Agreed by all 4 post-round</div>
+          <div style={{ fontSize: 10, color: COL.sil, marginBottom: 8 }}>Agreed by all 4 post-round</div>
           <select value={form.lolWinner} onChange={e => setForm({ ...form, lolWinner: e.target.value })} style={{ width: "100%", padding: "9px 10px", fontSize: 13, marginBottom: form.lolWinner ? 8 : 0 }}>
             <option value="">No LOLLIES this round</option>
             {PLAYERS.map(p => <option key={p} value={p}>{p}</option>)}
@@ -1667,7 +1766,7 @@ function App() {
         </div>
 
         {/* Mare - single winner, 4 lads agreed post-round */}
-        <div style={{ margin: "0 0 10px", padding: 14, borderRadius: 10, background: COL.red + "08", border: `1px solid ${COL.red}20` }}>
+        <div className="tracker-soft" style={{ margin: "0 0 10px", padding: 14, borderColor: `${COL.red}44`, background: "rgba(157,72,80,.08)" }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: COL.red, marginBottom: 8 }}>Mare</div>
           <select value={form.mareWinner} onChange={e => setForm({ ...form, mareWinner: e.target.value })} style={{ width: "100%", padding: "9px 10px", fontSize: 13, marginBottom: form.mareWinner ? 8 : 0 }}>
             <option value="">No Mare this round</option>
@@ -1677,12 +1776,12 @@ function App() {
         </div>
 
         {/* Closest to the pin - +1 point */}
-        <div style={{ margin: "0 0 10px", padding: 14, borderRadius: 10, background: COL.grn + "08", border: `1px solid ${COL.grn}20` }}>
+        <div className="tracker-soft" style={{ margin: "0 0 10px", padding: 14, borderColor: `${COL.grn}44`, background: "rgba(78,164,124,.08)" }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 2 }}>
-            <span style={{ fontSize: 13, fontWeight: 600, color: COL.grn }}>🎯 Closest to the pin</span>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, fontWeight: 600, color: COL.grn }}><UiIcon name="target" size={13} /> Closest to the pin</span>
             <span style={{ fontSize: 10, color: COL.grn, fontWeight: 600, padding: "1px 6px", borderRadius: 4, background: COL.grn + "15" }}>+1 pt</span>
           </div>
-          <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 8 }}>Closest tee shot to the flag on a designated par 3</div>
+          <div style={{ fontSize: 10, color: COL.sil, marginBottom: 8 }}>Closest tee shot to the flag on a designated par 3</div>
           <select value={form.ctpWinner} onChange={e => setForm({ ...form, ctpWinner: e.target.value })} style={{ width: "100%", padding: "9px 10px", fontSize: 13 }}>
             <option value="">No CTP this round</option>
             {PLAYERS.map(p => <option key={p} value={p}>{p}</option>)}
@@ -1690,9 +1789,9 @@ function App() {
         </div>
 
         {/* Round summary - host writeup */}
-        <div style={{ margin: "0 0 12px", padding: 14, borderRadius: 10, background: COL.navy + "06", border: `1px solid ${COL.navy}18` }}>
-          <div style={{ fontSize: 13, fontWeight: 600, color: COL.navy, marginBottom: 2 }}>Round summary</div>
-          <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 8 }}>A few notes per player. Wrap text in <code style={{ background: "#fff", padding: "1px 4px", borderRadius: 3, border: "1px solid #e5e7eb", fontSize: 10 }}>**double asterisks**</code> for bold (e.g. player names).</div>
+        <div className="tracker-soft" style={{ margin: "0 0 12px", padding: 14 }}>
+          <div style={{ fontSize: 13, fontWeight: 600, color: COL.w, marginBottom: 2 }}>Round summary</div>
+          <div style={{ fontSize: 10, color: COL.sil, marginBottom: 8 }}>A few notes per player. Wrap text in <code style={{ background: "rgba(255,255,255,.08)", padding: "1px 4px", borderRadius: 3, border: "1px solid rgba(143,161,196,.2)", fontSize: 10 }}>**double asterisks**</code> for bold (e.g. player names).</div>
           <textarea placeholder={"**Course conditions**\nGreens slow, dew on the front 9.\n\n**Niall**\nBattled hard but lost the plot on the back 9.\n\n**Sea**\nGot every bunker."} value={form.summary} onChange={e => setForm({ ...form, summary: e.target.value })} style={{ width: "100%", padding: "10px 12px", fontSize: 13, minHeight: 160, fontFamily: "inherit", lineHeight: 1.5 }} />
         </div>
 
@@ -1701,7 +1800,7 @@ function App() {
 
       {/* ===== FINALE ===== */}
       {view === "finale" && !profileFor && <div>
-        <div style={{ background: `linear-gradient(135deg, ${COL.navy}, #0a1520)`, borderRadius: 12, padding: "24px 16px 20px", marginBottom: 10, textAlign: "center", color: COL.w, border: `1px solid ${COL.gold}20` }}>
+        <div className="tracker-card" style={{ padding: "24px 16px 20px", marginBottom: 10, textAlign: "center", color: COL.w, borderColor: `${COL.gold}33` }}>
           <div style={{ fontSize: 10, letterSpacing: 3, color: COL.gold, textTransform: "uppercase", fontWeight: 500 }}>Rounds 11 & 12</div>
           <h2 style={{ fontSize: 32, fontWeight: 500, margin: "10px 0 4px", fontFamily: "Georgia,serif", color: COL.w }}>Barnbougle</h2>
           <div style={{ fontSize: 12, color: COL.sil, marginTop: 2 }}>Bridport, Tasmania</div>
@@ -1729,8 +1828,8 @@ function App() {
           </div>
         </div>
 
-        <div style={{ fontSize: 13, fontWeight: 500, marginBottom: 4 }}>Season schedule</div>
-        <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 8 }}>
+        <div className="section-heading" style={{ marginBottom: 4 }}>Season schedule</div>
+        <div style={{ fontSize: 10, color: COL.sil, marginBottom: 8 }}>
           Rounds ideally every 2 weeks on Sat or Sun. Skips weeks where anyone is away. 
           Estimated finale: <span style={{ fontWeight: 500, color: COL.gold }}>{schedule.length >= 12 ? new Date(schedule[11].d).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" }) : "TBD"}</span>
         </div>
@@ -1744,44 +1843,44 @@ function App() {
           return <React.Fragment key={i}>
             <div style={{
               display: "flex", alignItems: "center", gap: 10, padding: "10px 12px",
-              background: isNext ? "#f3f4f6" : isFin ? COL.gold + "08" : "transparent",
-              borderBottom: "0.5px solid #e5e7eb",
-              borderLeft: isNext ? `3px solid ${COL.grn}` : done ? `3px solid ${COL.navy}` : isFin ? `3px solid ${COL.gold}` : isTeam ? `3px solid ${COL.gold}` : "3px solid #e5e7eb",
+              background: isNext ? "rgba(78,164,124,.08)" : isFin ? "rgba(210,169,46,.07)" : "rgba(17,32,54,.42)",
+              borderBottom: "1px solid rgba(143,161,196,.14)",
+              borderLeft: isNext ? `3px solid ${COL.grn}` : done ? `3px solid #5b83ff` : isFin ? `3px solid ${COL.gold}` : isTeam ? `3px solid ${COL.gold}` : "3px solid rgba(143,161,196,.25)",
             }}>
               <div style={{ minWidth: 30 }}>
-                <div style={{ fontSize: 14, fontWeight: 500, color: done ? COL.navy : isFin ? COL.gold : "#6b7280" }}>R{sched.r}</div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: done ? "#9db6ff" : isFin ? COL.gold : COL.sil }}>R{sched.r}</div>
               </div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: 12, fontWeight: 500, color: done ? "#1a1a1a" : isFin ? COL.gold : "#6b7280" }}>
+                <div style={{ fontSize: 12, fontWeight: 500, color: done ? COL.w : isFin ? COL.gold : COL.sil }}>
                   {new Date(sched.d).toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short" })}
                 </div>
-                {done && <div style={{ fontSize: 10, color: "#6b7280", marginTop: 2, display: "flex", gap: 4, alignItems: "center" }}>
-                  <span style={{ fontWeight: 500, color: "#1a1a1a" }}>{round.courseName}</span>
+                {done && <div style={{ fontSize: 10, color: COL.sil, marginTop: 2, display: "flex", gap: 4, alignItems: "center" }}>
+                  <span style={{ fontWeight: 500, color: COL.w }}>{round.courseName}</span>
                   <span style={{ padding: "1px 6px", borderRadius: 8, background: COL.gold + "15", color: COL.gold, fontSize: 9, fontWeight: 500 }}>{roundWinner(round) || "?"} wins</span>
                 </div>}
                 {isFin && !done && <div style={{ fontSize: 11, color: COL.gold, fontWeight: 500, marginTop: 1 }}>{sched.note}</div>}
-                {!isFin && !done && <div style={{ fontSize: 10, color: "#6b7280", marginTop: 1 }}>{sched.lockedCourseName ? `${sched.lockedCourseName}${sched.teeTime ? ` · ${sched.teeTime}` : ""} · ${sched.host} hosting` : `${sched.host} books`}</div>}
-                {isTeam && !done && <div style={{ fontSize: 9, color: COL.gold, marginTop: 3, lineHeight: 1.4, fontWeight: 500 }}>🤝 2v2 Scramble · 1st+4th vs 2nd+3rd · pick best shot every stroke · winners +6 each, losers -2 each</div>}
+                {!isFin && !done && <div style={{ fontSize: 10, color: COL.sil, marginTop: 1 }}>{sched.lockedCourseName ? `${sched.lockedCourseName}${sched.teeTime ? ` · ${sched.teeTime}` : ""} · ${sched.host} hosting` : `${sched.host} books`}</div>}
+                {isTeam && !done && <div style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 9, color: COL.gold, marginTop: 3, lineHeight: 1.4, fontWeight: 500 }}><UiIcon name="users" size={11} /> <span>2v2 Scramble · 1st+4th vs 2nd+3rd · pick best shot every stroke · winners +6 each, losers -2 each</span></div>}
               </div>
               <div style={{ display: "flex", gap: 3, flexWrap: "wrap", justifyContent: "flex-end" }}>
-                {sched.lockedCourseName && !done && <span style={{ fontSize: 9, padding: "2px 8px", borderRadius: 8, background: COL.navy + "15", color: COL.navy, fontWeight: 600 }}>📍 LOCKED</span>}
-                {isTeam && !done && <span style={{ fontSize: 9, padding: "2px 8px", borderRadius: 8, background: COL.gold + "20", color: COL.gold, fontWeight: 600 }}>🤝 SCRAMBLE</span>}
-                {isNext && <span style={{ fontSize: 9, padding: "2px 8px", borderRadius: 8, background: COL.grn + "20", color: COL.grn, fontWeight: 500 }}>Next</span>}
-                {done && <span style={{ fontSize: 9, padding: "2px 8px", borderRadius: 8, background: COL.navy + "15", color: COL.navy, fontWeight: 500 }}>Done</span>}
+                {sched.lockedCourseName && !done && <span className="tracker-chip" style={{ fontSize: 9, padding: "2px 8px" }}>Locked</span>}
+                {isTeam && !done && <span className="tracker-chip gold" style={{ fontSize: 9, padding: "2px 8px" }}>Scramble</span>}
+                {isNext && <span className="tracker-chip green" style={{ fontSize: 9, padding: "2px 8px" }}>Next</span>}
+                {done && <span className="tracker-chip" style={{ fontSize: 9, padding: "2px 8px" }}>Done</span>}
                 {awayNow.map(a => <span key={a.who} style={{ fontSize: 9, padding: "2px 6px", borderRadius: 8, background: COL.red + "15", color: COL.red }}>{shortName(a.who)} away</span>)}
               </div>
             </div>
             {sched.r === 6 && <div style={{
               display: "flex", alignItems: "center", gap: 10, padding: "12px",
-              background: COL.red + "08",
-              borderBottom: "0.5px solid #e5e7eb",
+              background: "rgba(157,72,80,.08)",
+              borderBottom: "1px solid rgba(143,161,196,.14)",
               borderLeft: `3px solid ${COL.red}`,
             }}>
-              <div style={{ fontSize: 22, flexShrink: 0 }}>🍻</div>
+              <div style={{ color: COL.red, flexShrink: 0 }}><UiIcon name="trophy" size={22} /></div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 12, fontWeight: 600, color: COL.red, textTransform: "uppercase", letterSpacing: 1 }}>Halfway League Roast</div>
-                <div style={{ fontSize: 11, color: "#1a1a1a", marginTop: 2, fontWeight: 500 }}>Mandatory · Post-round roasties + season review</div>
-                <div style={{ fontSize: 10, color: "#6b7280", marginTop: 2, lineHeight: 1.4 }}>Pub session after R6. Standings audit, shot-shaping discussion, forfeit progress check.</div>
+                <div style={{ fontSize: 11, color: COL.w, marginTop: 2, fontWeight: 500 }}>Mandatory · Post-round roasties + season review</div>
+                <div style={{ fontSize: 10, color: COL.sil, marginTop: 2, lineHeight: 1.4 }}>Pub session after R6. Standings audit, shot-shaping discussion, forfeit progress check.</div>
               </div>
               <span style={{ fontSize: 9, padding: "3px 8px", borderRadius: 8, background: COL.red + "20", color: COL.red, fontWeight: 600, flexShrink: 0 }}>MANDATORY</span>
             </div>}
@@ -1789,13 +1888,13 @@ function App() {
         })}
 
         {/* AVAILABILITY */}
-        <div style={{ fontSize: 13, fontWeight: 500, marginTop: 16, marginBottom: 8 }}>Availability</div>
-        <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 8 }}>Add dates when someone is away so rounds can be scheduled around it.</div>
+        <div className="section-heading" style={{ marginTop: 16, marginBottom: 8 }}>Availability</div>
+        <div style={{ fontSize: 10, color: COL.sil, marginBottom: 8 }}>Add dates when someone is away so rounds can be scheduled around it.</div>
         {(data.away || []).map((a, i) => (
-          <div key={i} style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4, padding: "6px 8px", borderRadius: 6, background: "#f3f4f6" }}>
+          <div key={i} className="tracker-soft" style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4, padding: "6px 8px" }}>
             <Avatar name={a.who} size={20} />
             <span style={{ fontSize: 11, fontWeight: 500, minWidth: 50 }}>{shortName(a.who)}</span>
-            <span style={{ fontSize: 10, color: "#6b7280", flex: 1 }}>
+            <span style={{ fontSize: 10, color: COL.sil, flex: 1 }}>
               {new Date(a.from).toLocaleDateString("en-AU", { day: "numeric", month: "short" })} - {new Date(a.to).toLocaleDateString("en-AU", { day: "numeric", month: "short" })}
             </span>
             <span style={{ fontSize: 9, color: COL.red }}>{a.note}</span>
@@ -1824,29 +1923,29 @@ function App() {
         </div>
 
         {/* POT TRACKER */}
-        <div style={{ fontSize: 13, fontWeight: 500, marginTop: 16, marginBottom: 4 }}>Season pot</div>
-        <div style={{ fontSize: 10, color: "#6b7280", marginBottom: 8 }}>Auto-tallies $40/round (league) and $100/round (finale).</div>
+        <div className="section-heading" style={{ marginTop: 16, marginBottom: 4 }}>Season pot</div>
+        <div style={{ fontSize: 10, color: COL.sil, marginBottom: 8 }}>Auto-tallies $40/round (league) and $100/round (finale).</div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 12 }}>
-          <div style={{ borderRadius: 8, overflow: "hidden", border: "0.5px solid #e5e7eb" }}>
-            <div style={{ background: COL.navy, padding: "6px 10px", color: COL.w, fontSize: 11, fontWeight: 500 }}>League pot</div>
+          <div className="tracker-card" style={{ overflow: "hidden" }}>
+            <div style={{ background: "rgba(255,255,255,.04)", padding: "6px 10px", color: COL.w, fontSize: 11, fontWeight: 600, borderBottom: "1px solid rgba(143,161,196,.14)" }}>League pot</div>
             <div style={{ padding: "12px 10px", textAlign: "center" }}>
               <div style={{ fontSize: 24, fontWeight: 500 }}>${leaguePot}</div>
-              <div style={{ fontSize: 9, color: "#6b7280" }}>of ${TOTAL_ROUNDS * 40}</div>
-              <div style={{ height: 4, background: "#e5e7eb", borderRadius: 2, marginTop: 6, overflow: "hidden" }}>
+              <div style={{ fontSize: 9, color: COL.sil }}>of ${TOTAL_ROUNDS * 40}</div>
+              <div style={{ height: 4, background: "rgba(143,161,196,.18)", borderRadius: 2, marginTop: 6, overflow: "hidden" }}>
                 <div style={{ height: "100%", width: `${Math.min(100, Math.round((leaguePot / (TOTAL_ROUNDS * 40)) * 100))}%`, background: COL.grn, borderRadius: 2, transition: "width 0.5s" }} />
               </div>
-              <div style={{ fontSize: 8, color: "#6b7280", marginTop: 4 }}>$10/player/round · 1st 60% · 2nd 25% · 3rd 15% · 4th forfeit</div>
+              <div style={{ fontSize: 8, color: COL.sil, marginTop: 4 }}>$10/player/round · 1st 60% · 2nd 25% · 3rd 15% · 4th forfeit</div>
             </div>
           </div>
-          <div style={{ borderRadius: 8, overflow: "hidden", border: "0.5px solid #e5e7eb" }}>
-            <div style={{ background: COL.gold, padding: "6px 10px", color: COL.navy, fontSize: 11, fontWeight: 500 }}>Finale fund</div>
+          <div className="tracker-card" style={{ overflow: "hidden", borderColor: `${COL.gold}44` }}>
+            <div style={{ background: "rgba(210,169,46,.12)", padding: "6px 10px", color: COL.gold, fontSize: 11, fontWeight: 600, borderBottom: `1px solid ${COL.gold}33` }}>Finale fund</div>
             <div style={{ padding: "12px 10px", textAlign: "center" }}>
               <div style={{ fontSize: 24, fontWeight: 500 }}>${finaleFundPot}</div>
-              <div style={{ fontSize: 9, color: "#6b7280" }}>of $1,200</div>
-              <div style={{ height: 4, background: "#e5e7eb", borderRadius: 2, marginTop: 6, overflow: "hidden" }}>
+              <div style={{ fontSize: 9, color: COL.sil }}>of $1,200</div>
+              <div style={{ height: 4, background: "rgba(143,161,196,.18)", borderRadius: 2, marginTop: 6, overflow: "hidden" }}>
                 <div style={{ height: "100%", width: `${Math.min(100, Math.round((finaleFundPot / 1200) * 100))}%`, background: COL.gold, borderRadius: 2, transition: "width 0.5s" }} />
               </div>
-              <div style={{ fontSize: 8, color: "#6b7280", marginTop: 4 }}>$25/player/round - Travel, accom & green fees</div>
+              <div style={{ fontSize: 8, color: COL.sil, marginTop: 4 }}>$25/player/round - Travel, accom & green fees</div>
             </div>
           </div>
         </div>
@@ -1862,7 +1961,7 @@ function App() {
       </div>}
 
       {/* SYNC STATUS FOOTER */}
-      <div style={{ marginTop: 16, padding: "8px 12px", textAlign: "center", fontSize: 10, color: "#9ca3af", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
+      <div style={{ marginTop: 16, padding: "8px 12px", textAlign: "center", fontSize: 10, color: COL.sil, display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
         <span style={{ display: "inline-block", width: 6, height: 6, borderRadius: "50%", background: saving ? COL.gold : COL.grn }} />
         {saving ? "Saving..." : updatedAt ? `Synced · last update ${new Date(updatedAt).toLocaleString("en-AU", { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" })}` : "Live sync on"}
       </div>
